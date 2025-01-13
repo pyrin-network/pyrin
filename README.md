@@ -314,7 +314,7 @@ Mining is currently supported only on testnet, so once you've setup a test node,
 
 1. Download and unzip the latest binaries bundle of [Pyrinpyi/pyrin](https://github.com/pyrin-network/pyrin/releases).
 
-2. In a separate terminal run the Pyrinpyi/pyrin miner:
+2. In a separate terminal run the pyrin-network/pyrin miner:
 
     ```
     pyrinminer --testnet --miningaddr pyrintest:qrcqat6l9zcjsu7swnaztqzrv0s7hu04skpaezxk43y4etj8ncwfk308jlcew

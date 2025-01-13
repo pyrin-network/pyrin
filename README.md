@@ -1,10 +1,10 @@
 
 #### Pyrin Node
 
-Pyrin node built on rust, based on [rusty-pyrin](https://github.com/pyrinnet/rusty-pyrin)
+Pyrin node built on rust, based on [rusty-pyrin](https://github.com/pyrin-network/pyrin/)
 
 #### Archived 
-Repo moved to https://github.com/PyrinNetwork/pyrin
+Repo moved to https://github.com/pyrin-network/pyrin
 
 ## Installation
   <details>
@@ -142,7 +142,7 @@ To build WASM on MacOS you need to install `llvm` from homebrew (at the time of 
       ```      
   5. Clone the repo
       ```bash
-      git clone https://github.com/Pyrinpyi/pyrin
+      git clone https://github.com/pyrin-network/pyrin
       cd pyrin
       ```
 
@@ -171,7 +171,7 @@ To build WASM on MacOS you need to install `llvm` from homebrew (at the time of 
 
 ### Builds & documentation
 
-  - Release builds: https://github.com/Pyrinpyi/pyrin/releases
+  - Release builds: https://github.com/pyrin-network/pyrin/releases
 
   </details>
 <details>
@@ -312,7 +312,7 @@ Mining
 
 Mining is currently supported only on testnet, so once you've setup a test node, follow these instructions.
 
-1. Download and unzip the latest binaries bundle of [Pyrinpyi/pyrin](https://github.com/Pyrinpyi/pyrin/releases).
+1. Download and unzip the latest binaries bundle of [Pyrinpyi/pyrin](https://github.com/pyrin-network/pyrin/releases).
 
 2. In a separate terminal run the Pyrinpyi/pyrin miner:
 
@@ -322,7 +322,7 @@ Mining is currently supported only on testnet, so once you've setup a test node,
 
     This will create and feed a DAG with the miner getting block templates from the node and submitting them back when mined. The node processes and stores the blocks while applying all currently implemented logic. Execution can be stopped and resumed, the data is persisted in a database.
 
-    You can replace the above mining address with your own address by creating one as described [here](https://github.com/pyrinnet/docs/blob/main/Getting%20Started/Full%20Node%20Installation.md#creating-a-wallet-optional). 
+    You can replace the above mining address with your own address by creating one as described [here](https://github.com/pyrin-network/docs/blob/main/Getting%20Started/Full%20Node%20Installation.md#creating-a-wallet-optional). 
 
 </details>
 

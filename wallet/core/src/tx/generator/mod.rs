@@ -1,6 +1,6 @@
 //!
 //! Transaction generator implementation used to construct
-//! Kaspa transactions.
+//! Pyrin transactions.
 //!
 
 #[allow(clippy::module_inception)]

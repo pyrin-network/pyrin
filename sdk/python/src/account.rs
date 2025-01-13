@@ -9,11 +9,11 @@ use tokio::select;
 use workflow_core::abortable::Abortable;
 use workflow_core::channel::MultiplexerChannel;
 
-use kaspa_addresses::Address;
-use kaspa_wallet_core::account::Account;
-use kaspa_wallet_core::events::Events;
-use kaspa_wallet_core::prelude::{PaymentDestination, PaymentOutputs, Secret};
-use kaspa_wallet_core::utils::kaspa_to_sompi;
+use pyrin_addresses::Address;
+use pyrin_wallet_core::account::Account;
+use pyrin_wallet_core::events::Events;
+use pyrin_wallet_core::prelude::{PaymentDestination, PaymentOutputs, Secret};
+use pyrin_wallet_core::utils::pyrin_to_sompi;
 
 type ListenerCallback = Arc<Mutex<HashMap<String, Py<PyFunction>>>>;
 
@@ -153,8 +153,8 @@ impl PyAccount {
         match &self.account {
             Some(account) => {
                 let account = account.clone();
-                let priority_fee_leor = kaspa_to_sompi(priority_fee_pyi);
-                let amount_leor = kaspa_to_sompi(amount_pyi);
+                let priority_fee_leor = pyrin_to_sompi(priority_fee_pyi);
+                let amount_leor = pyrin_to_sompi(amount_pyi);
 
                 pyo3_asyncio::tokio::future_into_py(py, async move {
                     let abortable = Abortable::default();
@@ -186,8 +186,8 @@ impl PyAccount {
         match &self.account {
             Some(account) => {
                 let account = account.clone();
-                let priority_fee_leor = kaspa_to_sompi(priority_fee_pyi);
-                let amount_leor = kaspa_to_sompi(amount_pyi);
+                let priority_fee_leor = pyrin_to_sompi(priority_fee_pyi);
+                let amount_leor = pyrin_to_sompi(amount_pyi);
 
                 pyo3_asyncio::tokio::future_into_py(py, async move {
                     let abortable = Abortable::default();

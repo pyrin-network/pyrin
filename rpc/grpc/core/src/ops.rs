@@ -1,5 +1,5 @@
-use crate::protowire::{kaspad_request::Payload as RequestPayload, kaspad_response::Payload as ResponsePayload, *};
-use kaspa_rpc_core::RpcError;
+use crate::protowire::{pyrind_request::Payload as RequestPayload, pyrind_response::Payload as ResponsePayload, *};
+use pyrin_rpc_core::RpcError;
 use workflow_core::enums::Describe;
 
 macro_rules! payload_type_enum {
@@ -46,7 +46,7 @@ macro_rules! payload_type_enum {
 payload_type_enum! {
 #[repr(u8)]
 #[derive(Describe, Debug, Copy, Clone, Eq, Hash, PartialEq)]
-pub enum KaspadPayloadOps {
+pub enum PyrindPayloadOps {
     SubmitBlock = 0,
     GetBlockTemplate,
     GetCurrentNetwork,
@@ -98,6 +98,6 @@ pub enum KaspadPayloadOps {
 
     // Please note:
     // Notification payloads existing in ResponsePayload are not considered valid ops.
-    // The conversion from a notification ResponsePayload into KaspadPayloadOps fails.
+    // The conversion from a notification ResponsePayload into PyrindPayloadOps fails.
 }
 }

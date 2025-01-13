@@ -12,8 +12,8 @@ use crate::model::{
         reachability::ReachabilityStoreReader,
     },
 };
-use kaspa_hashes::Hash;
-use kaspa_utils::option::OptionExtensions;
+use pyrin_hashes::Hash;
+use pyrin_utils::option::OptionExtensions;
 use parking_lot::RwLock;
 
 #[derive(Clone)]

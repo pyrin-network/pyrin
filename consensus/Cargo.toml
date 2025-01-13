@@ -1,6 +1,6 @@
 [package]
-name = "kaspa-consensus"
-description = "Kaspa consensus library"
+name = "pyrin-consensus"
+description = "Pyrin consensus library"
 rust-version.workspace = true
 version.workspace = true
 edition.workspace = true
@@ -18,20 +18,20 @@ faster-hex.workspace = true
 futures-util.workspace = true
 indexmap.workspace = true
 itertools.workspace = true
-kaspa-consensus-core.workspace = true
-kaspa-consensus-notify.workspace = true
-kaspa-consensusmanager.workspace = true
-kaspa-core.workspace = true
-kaspa-database.workspace = true
-kaspa-hashes.workspace = true
-kaspa-math.workspace = true
-kaspa-merkle.workspace = true
-kaspa-muhash.workspace = true
-kaspa-notify.workspace = true
-kaspa-pow.workspace = true
-kaspa-txscript.workspace = true
-kaspa-utils.workspace = true
-kaspa-addresses.workspace = true
+pyrin-consensus-core.workspace = true
+pyrin-consensus-notify.workspace = true
+pyrin-consensusmanager.workspace = true
+pyrin-core.workspace = true
+pyrin-database.workspace = true
+pyrin-hashes.workspace = true
+pyrin-math.workspace = true
+pyrin-merkle.workspace = true
+pyrin-muhash.workspace = true
+pyrin-notify.workspace = true
+pyrin-pow.workspace = true
+pyrin-txscript.workspace = true
+pyrin-utils.workspace = true
+pyrin-addresses.workspace = true
 log.workspace = true
 once_cell.workspace = true
 parking_lot.workspace = true
@@ -54,7 +54,7 @@ criterion.workspace = true
 serde_json.workspace = true
 flate2.workspace = true
 rand_distr.workspace = true
-kaspa-txscript-errors.workspace = true
+pyrin-txscript-errors.workspace = true
 
 [[bench]]
 name = "hash_benchmarks"
@@ -62,4 +62,4 @@ harness = false
 
 [features]
 html_reports = []
-devnet-prealloc = ["kaspa-consensus-core/devnet-prealloc"]
+devnet-prealloc = ["pyrin-consensus-core/devnet-prealloc"]

@@ -1,12 +1,12 @@
-use kaspa_grpc_client::{GrpcClient, GrpcClientNotify};
-use kaspa_notify::{
+use pyrin_grpc_client::{GrpcClient, GrpcClientNotify};
+use pyrin_notify::{
     connection::Connection as ConnectionT,
     error::{Error as NotifyError, Result as NotifyResult},
     listener::ListenerId,
     notification::Notification as NotificationT,
     notifier::Notify,
 };
-use kaspa_rpc_core::{api::ops::RpcApiOps, notify::mode::NotificationMode, Notification};
+use pyrin_rpc_core::{api::ops::RpcApiOps, notify::mode::NotificationMode, Notification};
 use std::{
     fmt::{Debug, Display},
     sync::{Arc, Mutex},
@@ -149,7 +149,7 @@ impl ConnectionT for Connection {
     type Notification = Notification;
     type Message = Message;
     type Encoding = NotifyEncoding;
-    type Error = kaspa_notify::error::Error;
+    type Error = pyrin_notify::error::Error;
 
     fn encoding(&self) -> Self::Encoding {
         self.messenger().encoding().into()

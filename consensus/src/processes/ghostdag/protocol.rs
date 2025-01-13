@@ -1,11 +1,11 @@
 use std::sync::Arc;
 
-use kaspa_consensus_core::{
+use pyrin_consensus_core::{
     blockhash::{self, BlockHashExtensions, BlockHashes},
     BlockHashMap, BlueWorkType, HashMapCustomHasher,
 };
-use kaspa_hashes::Hash;
-use kaspa_utils::refs::Refs;
+use pyrin_hashes::Hash;
+use pyrin_utils::refs::Refs;
 
 use crate::{
     model::{

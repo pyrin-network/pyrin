@@ -1,6 +1,6 @@
 [package]
-name = "kaspa-p2p-lib"
-description = "Kaspa p2p library"
+name = "pyrin-p2p-lib"
+description = "Pyrin p2p library"
 rust-version.workspace = true
 version.workspace = true
 edition.workspace = true
@@ -13,22 +13,22 @@ repository.workspace = true
 path = "./src/lib.rs"
 
 [[bin]]
-name = "kaspa_p2p_client"
+name = "pyrin_p2p_client"
 path = "./src/bin/client.rs"
 
 [[bin]]
-name = "kaspa_p2p_server"
+name = "pyrin_p2p_server"
 path = "./src/bin/server.rs"
 
 [dependencies]
-kaspa-core.workspace = true
-kaspa-consensus-core.workspace = true
-kaspa-mining-errors.workspace = true
-kaspa-hashes.workspace = true
-kaspa-math.workspace = true
-kaspa-muhash.workspace = true
-kaspa-utils.workspace = true
-kaspa-utils-tower.workspace = true
+pyrin-core.workspace = true
+pyrin-consensus-core.workspace = true
+pyrin-mining-errors.workspace = true
+pyrin-hashes.workspace = true
+pyrin-math.workspace = true
+pyrin-muhash.workspace = true
+pyrin-utils.workspace = true
+pyrin-utils-tower.workspace = true
 
 borsh.workspace = true
 ctrlc.workspace = true

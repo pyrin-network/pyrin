@@ -1,4 +1,4 @@
-use kaspa_consensus_core::tx::TransactionId;
+use pyrin_consensus_core::tx::TransactionId;
 use std::collections::HashSet;
 
 pub(crate) mod candidate_tx;

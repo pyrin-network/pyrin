@@ -1,6 +1,6 @@
 #![allow(non_snake_case)]
 use cfg_if::cfg_if;
-use kaspa_wallet_macros::declare_typescript_wasm_interface as declare;
+use pyrin_wallet_macros::declare_typescript_wasm_interface as declare;
 use wasm_bindgen::prelude::*;
 
 cfg_if! {
@@ -499,8 +499,8 @@ declare! {
     r#"
     /**
      * Emitted by {@link UtxoProcessor} after successfully opening an RPC
-     * connection to the Kaspa node. This event contains general information
-     * about the Kaspa node.
+     * connection to the Pyrin node. This event contains general information
+     * about the Pyrin node.
      * 
      * @category Wallet Events
      */

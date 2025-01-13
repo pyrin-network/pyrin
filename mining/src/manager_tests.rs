@@ -13,8 +13,8 @@ mod tests {
         testutils::consensus_mock::ConsensusMock,
         MiningCounters,
     };
-    use kaspa_addresses::{Address, Prefix, Version};
-    use kaspa_consensus_core::{
+    use pyrin_addresses::{Address, Prefix, Version};
+    use pyrin_consensus_core::{
         api::ConsensusApi,
         block::TemplateBuildMode,
         coinbase::MinerData,
@@ -27,8 +27,8 @@ mod tests {
             TransactionOutput, UtxoEntry,
         },
     };
-    use kaspa_hashes::Hash;
-    use kaspa_txscript::{
+    use pyrin_hashes::Hash;
+    use pyrin_txscript::{
         pay_to_address_script, pay_to_script_hash_signature_script,
         test_helpers::{create_transaction, op_true_script},
     };
@@ -904,8 +904,8 @@ mod tests {
 
     fn generate_new_coinbase(address_prefix: Prefix, op: OpType) -> MinerData {
         match op {
-            OpType::Usual => get_miner_data(address_prefix), // TODO: use lib_kaspa_wallet.CreateKeyPair, util.NewAddressPublicKeyECDSA equivalents
-            OpType::Edcsa => get_miner_data(address_prefix), // TODO: use lib_kaspa_wallet.CreateKeyPair, util.NewAddressPublicKey equivalents
+            OpType::Usual => get_miner_data(address_prefix), // TODO: use lib_pyrin_wallet.CreateKeyPair, util.NewAddressPublicKeyECDSA equivalents
+            OpType::Edcsa => get_miner_data(address_prefix), // TODO: use lib_pyrin_wallet.CreateKeyPair, util.NewAddressPublicKey equivalents
             OpType::True => {
                 let (script, _) = op_true_script();
                 MinerData::new(script, vec![])

@@ -1,16 +1,16 @@
 use std::sync::Arc;
 
-use kaspa_consensus_core::BlockHashSet;
-use kaspa_consensus_core::BlockHasher;
-use kaspa_database::prelude::CachedDbSetItem;
-use kaspa_database::prelude::DbWriter;
-use kaspa_database::prelude::ReadLock;
-use kaspa_database::prelude::StoreResult;
-use kaspa_database::prelude::StoreResultExtensions;
-use kaspa_database::prelude::DB;
-use kaspa_database::prelude::{BatchDbWriter, DirectDbWriter};
-use kaspa_database::registry::DatabaseStorePrefixes;
-use kaspa_hashes::Hash;
+use pyrin_consensus_core::BlockHashSet;
+use pyrin_consensus_core::BlockHasher;
+use pyrin_database::prelude::CachedDbSetItem;
+use pyrin_database::prelude::DbWriter;
+use pyrin_database::prelude::ReadLock;
+use pyrin_database::prelude::StoreResult;
+use pyrin_database::prelude::StoreResultExtensions;
+use pyrin_database::prelude::DB;
+use pyrin_database::prelude::{BatchDbWriter, DirectDbWriter};
+use pyrin_database::registry::DatabaseStorePrefixes;
+use pyrin_hashes::Hash;
 use rocksdb::WriteBatch;
 
 /// Reader API for `TipsStore`.
@@ -99,7 +99,7 @@ impl TipsStore for DbTipsStore {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use kaspa_database::{create_temp_db, prelude::ConnBuilder};
+    use pyrin_database::{create_temp_db, prelude::ConnBuilder};
 
     #[test]
     fn test_update_tips() {

@@ -1,8 +1,8 @@
 use crate::processes::ghostdag::ordering::SortableBlock;
-use kaspa_consensus_core::BlockHasher;
-use kaspa_database::prelude::Cache;
-use kaspa_hashes::Hash;
-use kaspa_utils::mem_size::MemSizeEstimator;
+use pyrin_consensus_core::BlockHasher;
+use pyrin_database::prelude::Cache;
+use pyrin_hashes::Hash;
+use pyrin_utils::mem_size::MemSizeEstimator;
 use std::{
     cmp::Reverse,
     collections::BinaryHeap,

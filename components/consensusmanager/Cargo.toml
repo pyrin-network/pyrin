@@ -1,6 +1,6 @@
 [package]
-name = "kaspa-consensusmanager"
-description = "Kaspa consensus library"
+name = "pyrin-consensusmanager"
+description = "Pyrin consensus library"
 rust-version.workspace = true
 version.workspace = true
 edition.workspace = true
@@ -14,10 +14,10 @@ duration-string.workspace = true
 futures-util.workspace = true
 futures.workspace = true
 itertools.workspace = true
-kaspa-consensus-core.workspace = true
-kaspa-consensus-notify.workspace = true
-kaspa-core.workspace = true
-kaspa-utils.workspace = true
+pyrin-consensus-core.workspace = true
+pyrin-consensus-notify.workspace = true
+pyrin-core.workspace = true
+pyrin-utils.workspace = true
 log.workspace = true
 parking_lot.workspace = true
 rand.workspace = true

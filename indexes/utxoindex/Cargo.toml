@@ -1,6 +1,6 @@
 [package]
-name = "kaspa-utxoindex"
-description = "Kaspa UTXO index"
+name = "pyrin-utxoindex"
+description = "Pyrin UTXO index"
 rust-version.workspace = true
 version.workspace = true
 edition.workspace = true
@@ -11,13 +11,13 @@ repository.workspace = true
 
 [dependencies]
 futures.workspace = true
-kaspa-consensus-core.workspace = true
-kaspa-consensusmanager.workspace = true
-kaspa-core.workspace = true
-kaspa-database.workspace = true
-kaspa-hashes.workspace = true
-kaspa-index-core.workspace = true
-kaspa-utils.workspace = true
+pyrin-consensus-core.workspace = true
+pyrin-consensusmanager.workspace = true
+pyrin-core.workspace = true
+pyrin-database.workspace = true
+pyrin-hashes.workspace = true
+pyrin-index-core.workspace = true
+pyrin-utils.workspace = true
 log.workspace = true
 parking_lot.workspace = true
 rocksdb.workspace = true
@@ -25,5 +25,5 @@ serde.workspace = true
 thiserror.workspace = true
 
 [dev-dependencies]
-kaspa-consensus.workspace = true
+pyrin-consensus.workspace = true
 rand = { workspace = true, features = ["small_rng"] }

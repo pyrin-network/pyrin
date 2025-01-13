@@ -1,1 +1,1 @@
-pub type RpcHash = kaspa_hashes::Hash;
+pub type RpcHash = pyrin_hashes::Hash;

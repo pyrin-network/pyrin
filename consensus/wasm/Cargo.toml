@@ -1,6 +1,6 @@
 [package]
-name = "kaspa-consensus-wasm"
-description = "Kaspa consensus core WASM bindings"
+name = "pyrin-consensus-wasm"
+description = "Pyrin consensus core WASM bindings"
 rust-version.workspace = true
 version.workspace = true
 edition.workspace = true
@@ -14,12 +14,12 @@ wasm32-sdk = []
 wasm32-types = []
 
 [dependencies]
-kaspa-consensus-core.workspace = true
-kaspa-consensus-client.workspace = true
-kaspa-addresses.workspace = true
-kaspa-txscript.workspace = true
-kaspa-hashes.workspace = true
-kaspa-utils.workspace = true
+pyrin-consensus-core.workspace = true
+pyrin-consensus-client.workspace = true
+pyrin-addresses.workspace = true
+pyrin-txscript.workspace = true
+pyrin-hashes.workspace = true
+pyrin-utils.workspace = true
 
 cfg-if.workspace = true
 faster-hex.workspace = true

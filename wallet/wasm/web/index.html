@@ -1,10 +1,10 @@
 <html>
     <head>
         <script type="module">
-            import * as kaspa from './kaspa-wallet/kaspa-wallet.js';
+            import * as pyrin from './pyrin-wallet/pyrin-wallet.js';
             (async () => {
-                const wasm = await kaspa.default('./kaspa-wallet/kaspa-wallet_bg.wasm');
-                await wasm.load_kaspa_wallet_cli();
+                const wasm = await pyrin.default('./pyrin-wallet/pyrin-wallet_bg.wasm');
+                await wasm.load_pyrin_wallet_cli();
             })();
         </script>
         <style>

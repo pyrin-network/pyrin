@@ -4,11 +4,11 @@
 //!
 
 use itertools::Itertools;
-use kaspa_p2p_lib::{
+use pyrin_p2p_lib::{
     common::ProtocolError,
     dequeue, dequeue_with_request_id, make_response,
     pb::{
-        self, kaspad_message::Payload, BlockWithTrustedDataV4Message, DoneBlocksWithTrustedDataMessage, PruningPointsMessage,
+        self, pyrind_message::Payload, BlockWithTrustedDataV4Message, DoneBlocksWithTrustedDataMessage, PruningPointsMessage,
         TrustedDataMessage,
     },
     IncomingRoute, Router,

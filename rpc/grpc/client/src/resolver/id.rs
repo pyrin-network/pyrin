@@ -1,11 +1,11 @@
 use crate::{
     error::{Error, Result},
-    resolver::{KaspadResponseReceiver, KaspadResponseSender, Resolver},
+    resolver::{PyrindResponseReceiver, PyrindResponseSender, Resolver},
 };
-use kaspa_core::trace;
-use kaspa_grpc_core::{
-    ops::KaspadPayloadOps,
-    protowire::{KaspadRequest, KaspadResponse},
+use pyrin_core::trace;
+use pyrin_grpc_core::{
+    ops::PyrindPayloadOps,
+    protowire::{PyrindRequest, PyrindResponse},
 };
 use std::{
     collections::HashMap,
@@ -17,11 +17,11 @@ use tokio::sync::oneshot;
 #[derive(Debug)]
 struct Pending {
     timestamp: Instant,
-    sender: KaspadResponseSender,
+    sender: PyrindResponseSender,
 }
 
 impl Pending {
-    fn new(sender: KaspadResponseSender) -> Self {
+    fn new(sender: PyrindResponseSender) -> Self {
         Self { timestamp: Instant::now(), sender }
     }
 }
@@ -38,8 +38,8 @@ impl IdResolver {
 }
 
 impl Resolver for IdResolver {
-    fn register_request(&self, _: KaspadPayloadOps, request: &KaspadRequest) -> KaspadResponseReceiver {
-        let (sender, receiver) = oneshot::channel::<Result<KaspadResponse>>();
+    fn register_request(&self, _: PyrindPayloadOps, request: &PyrindRequest) -> PyrindResponseReceiver {
+        let (sender, receiver) = oneshot::channel::<Result<PyrindResponse>>();
         {
             let mut pending_calls = self.pending_calls.lock().unwrap();
             pending_calls.insert(request.id, Pending::new(sender));
@@ -48,7 +48,7 @@ impl Resolver for IdResolver {
         receiver
     }
 
-    fn handle_response(&self, response: KaspadResponse) {
+    fn handle_response(&self, response: PyrindResponse) {
         match self.pending_calls.lock().unwrap().remove(&response.id) {
             Some(pending) => {
                 trace!("[Resolver] handle_response has matching request with id {}", response.id);

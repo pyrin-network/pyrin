@@ -1,6 +1,6 @@
 [package]
-name = "kaspa-grpc-core"
-description = "Kaspa gRPC core"
+name = "pyrin-grpc-core"
+description = "Pyrin gRPC core"
 rust-version.workspace = true
 version.workspace = true
 edition.workspace = true
@@ -10,12 +10,12 @@ license.workspace = true
 repository.workspace = true
 
 [dependencies]
-kaspa-consensus-core.workspace = true
-kaspa-core.workspace = true
-kaspa-notify.workspace = true
-kaspa-rpc-core.workspace = true
-kaspa-utils.workspace = true
-kaspa-muhash.workspace = true
+pyrin-consensus-core.workspace = true
+pyrin-core.workspace = true
+pyrin-notify.workspace = true
+pyrin-rpc-core.workspace = true
+pyrin-utils.workspace = true
+pyrin-muhash.workspace = true
 
 async-channel.workspace = true
 async-stream.workspace = true

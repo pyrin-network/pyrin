@@ -59,13 +59,12 @@ members = [
     "metrics/perf_monitor",
     "utils/alloc",
     "sdk/python",
-    "tools/export-db",
 ]
 
 [workspace.package]
 rust-version = "1.78.0"
 version = "0.14.5"
-authors = ["Pyrin developers", "Kaspa developers"]
+authors = ["Pyrin developers", "Pyrin developers"]
 license = "ISC"
 repository = "https://github.com/Pyrinpyi/pyrin"
 edition = "2021"
@@ -81,62 +80,62 @@ include = [
 ]
 
 [workspace.dependencies]
-# kaspa-testing-integration = { version = "0.14.1", path = "testing/integration" }
-kaspa-addresses = { version = "0.14.1", path = "crypto/addresses" }
-kaspa-addressmanager = { version = "0.14.1", path = "components/addressmanager" }
-kaspa-bip32 = { version = "0.14.1", path = "wallet/bip32" }
-kaspa-resolver = { version = "0.14.1", path = "rpr/wrpc/resolver" }
-kaspa-cli = { version = "0.14.1", path = "cli" }
-kaspa-connectionmanager = { version = "0.14.1", path = "components/connectionmanager" }
-kaspa-consensus = { version = "0.14.1", path = "consensus" }
-kaspa-consensus-core = { version = "0.14.1", path = "consensus/core" }
-kaspa-consensus-client = { version = "0.14.1", path = "consensus/client" }
-kaspa-consensus-notify = { version = "0.14.1", path = "consensus/notify" }
-kaspa-consensus-wasm = { version = "0.14.1", path = "consensus/wasm" }
-kaspa-consensusmanager = { version = "0.14.1", path = "components/consensusmanager" }
-kaspa-core = { version = "0.14.1", path = "core" }
-kaspa-daemon = { version = "0.14.1", path = "daemon" }
-kaspa-database = { version = "0.14.1", path = "database" }
-kaspa-grpc-client = { version = "0.14.1", path = "rpc/grpc/client" }
-kaspa-grpc-core = { version = "0.14.1", path = "rpc/grpc/core" }
-kaspa-grpc-server = { version = "0.14.1", path = "rpc/grpc/server" }
-kaspa-hashes = { version = "0.14.1", path = "crypto/hashes" }
-kaspa-index-core = { version = "0.14.1", path = "indexes/core" }
-kaspa-index-processor = { version = "0.14.1", path = "indexes/processor" }
-kaspa-math = { version = "0.14.1", path = "math" }
-kaspa-merkle = { version = "0.14.1", path = "crypto/merkle" }
-kaspa-metrics-core = { version = "0.14.1", path = "metrics/core" }
-kaspa-mining = { version = "0.14.1", path = "mining" }
-kaspa-mining-errors = { version = "0.14.1", path = "mining/errors" }
-kaspa-muhash = { version = "0.14.1", path = "crypto/muhash" }
-kaspa-notify = { version = "0.14.1", path = "notify" }
-kaspa-p2p-flows = { version = "0.14.1", path = "protocol/flows" }
-kaspa-p2p-lib = { version = "0.14.1", path = "protocol/p2p" }
-kaspa-perf-monitor = { version = "0.14.1", path = "metrics/perf_monitor" }
-kaspa-pow = { version = "0.14.1", path = "consensus/pow" }
-kaspa-rpc-core = { version = "0.14.1", path = "rpc/core" }
-kaspa-rpc-macros = { version = "0.14.1", path = "rpc/macros" }
-kaspa-rpc-service = { version = "0.14.1", path = "rpc/service" }
-kaspa-txscript = { version = "0.14.1", path = "crypto/txscript" }
-kaspa-txscript-errors = { version = "0.14.1", path = "crypto/txscript/errors" }
-kaspa-utils = { version = "0.14.1", path = "utils" }
-kaspa-utils-tower = { version = "0.14.1", path = "utils/tower" }
-kaspa-utxoindex = { version = "0.14.1", path = "indexes/utxoindex" }
-kaspa-wallet = { version = "0.14.1", path = "wallet/native" }
-kaspa-wallet-cli-wasm = { version = "0.14.1", path = "wallet/wasm" }
-kaspa-wallet-keys = { version = "0.14.1", path = "wallet/keys" }
-kaspa-wallet-core = { version = "0.14.1", path = "wallet/core" }
-kaspa-wallet-macros = { version = "0.14.1", path = "wallet/macros" }
-kaspa-wasm = { version = "0.14.1", path = "wasm" }
-kaspa-wasm-core = { version = "0.14.1", path = "wasm/core" }
-kaspa-wrpc-client = { version = "0.14.1", path = "rpc/wrpc/client" }
-kaspa-wrpc-core = { version = "0.14.1", path = "rpc/wrpc/core" }
-kaspa-wrpc-proxy = { version = "0.14.1", path = "rpc/wrpc/proxy" }
-kaspa-wrpc-server = { version = "0.14.1", path = "rpc/wrpc/server" }
-kaspa-wrpc-wasm = { version = "0.14.1", path = "rpc/wrpc/wasm" }
-kaspa-wrpc-example-subscriber = { version = "0.14.1", path = "rpc/wrpc/examples/subscriber" }
+# pyrin-testing-integration = { version = "0.14.1", path = "testing/integration" }
+pyrin-addresses = { version = "0.14.1", path = "crypto/addresses" }
+pyrin-addressmanager = { version = "0.14.1", path = "components/addressmanager" }
+pyrin-bip32 = { version = "0.14.1", path = "wallet/bip32" }
+pyrin-resolver = { version = "0.14.1", path = "rpr/wrpc/resolver" }
+pyrin-cli = { version = "0.14.1", path = "cli" }
+pyrin-connectionmanager = { version = "0.14.1", path = "components/connectionmanager" }
+pyrin-consensus = { version = "0.14.1", path = "consensus" }
+pyrin-consensus-core = { version = "0.14.1", path = "consensus/core" }
+pyrin-consensus-client = { version = "0.14.1", path = "consensus/client" }
+pyrin-consensus-notify = { version = "0.14.1", path = "consensus/notify" }
+pyrin-consensus-wasm = { version = "0.14.1", path = "consensus/wasm" }
+pyrin-consensusmanager = { version = "0.14.1", path = "components/consensusmanager" }
+pyrin-core = { version = "0.14.1", path = "core" }
+pyrin-daemon = { version = "0.14.1", path = "daemon" }
+pyrin-database = { version = "0.14.1", path = "database" }
+pyrin-grpc-client = { version = "0.14.1", path = "rpc/grpc/client" }
+pyrin-grpc-core = { version = "0.14.1", path = "rpc/grpc/core" }
+pyrin-grpc-server = { version = "0.14.1", path = "rpc/grpc/server" }
+pyrin-hashes = { version = "0.14.1", path = "crypto/hashes" }
+pyrin-index-core = { version = "0.14.1", path = "indexes/core" }
+pyrin-index-processor = { version = "0.14.1", path = "indexes/processor" }
+pyrin-math = { version = "0.14.1", path = "math" }
+pyrin-merkle = { version = "0.14.1", path = "crypto/merkle" }
+pyrin-metrics-core = { version = "0.14.1", path = "metrics/core" }
+pyrin-mining = { version = "0.14.1", path = "mining" }
+pyrin-mining-errors = { version = "0.14.1", path = "mining/errors" }
+pyrin-muhash = { version = "0.14.1", path = "crypto/muhash" }
+pyrin-notify = { version = "0.14.1", path = "notify" }
+pyrin-p2p-flows = { version = "0.14.1", path = "protocol/flows" }
+pyrin-p2p-lib = { version = "0.14.1", path = "protocol/p2p" }
+pyrin-perf-monitor = { version = "0.14.1", path = "metrics/perf_monitor" }
+pyrin-pow = { version = "0.14.1", path = "consensus/pow" }
+pyrin-rpc-core = { version = "0.14.1", path = "rpc/core" }
+pyrin-rpc-macros = { version = "0.14.1", path = "rpc/macros" }
+pyrin-rpc-service = { version = "0.14.1", path = "rpc/service" }
+pyrin-txscript = { version = "0.14.1", path = "crypto/txscript" }
+pyrin-txscript-errors = { version = "0.14.1", path = "crypto/txscript/errors" }
+pyrin-utils = { version = "0.14.1", path = "utils" }
+pyrin-utils-tower = { version = "0.14.1", path = "utils/tower" }
+pyrin-utxoindex = { version = "0.14.1", path = "indexes/utxoindex" }
+pyrin-wallet = { version = "0.14.1", path = "wallet/native" }
+pyrin-wallet-cli-wasm = { version = "0.14.1", path = "wallet/wasm" }
+pyrin-wallet-keys = { version = "0.14.1", path = "wallet/keys" }
+pyrin-wallet-core = { version = "0.14.1", path = "wallet/core" }
+pyrin-wallet-macros = { version = "0.14.1", path = "wallet/macros" }
+pyrin-wasm = { version = "0.14.1", path = "wasm" }
+pyrin-wasm-core = { version = "0.14.1", path = "wasm/core" }
+pyrin-wrpc-client = { version = "0.14.1", path = "rpc/wrpc/client" }
+pyrin-wrpc-core = { version = "0.14.1", path = "rpc/wrpc/core" }
+pyrin-wrpc-proxy = { version = "0.14.1", path = "rpc/wrpc/proxy" }
+pyrin-wrpc-server = { version = "0.14.1", path = "rpc/wrpc/server" }
+pyrin-wrpc-wasm = { version = "0.14.1", path = "rpc/wrpc/wasm" }
+pyrin-wrpc-example-subscriber = { version = "0.14.1", path = "rpc/wrpc/examples/subscriber" }
 pyrin = { version = "0.14.1", path = "pyrin" }
-kaspa-alloc = { version = "0.14.1", path = "utils/alloc" }
+pyrin-alloc = { version = "0.14.1", path = "utils/alloc" }
 
 # external
 aes = "0.8.3"

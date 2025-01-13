@@ -4,10 +4,10 @@ use crate::{
     model::stores::{ghostdag::GhostdagStoreReader, statuses::StatusesStoreReader},
     processes::window::WindowManager,
 };
-use kaspa_consensus_core::block::Block;
-use kaspa_database::prelude::StoreResultExtensions;
-use kaspa_hashes::Hash;
-use kaspa_utils::option::OptionExtensions;
+use pyrin_consensus_core::block::Block;
+use pyrin_database::prelude::StoreResultExtensions;
+use pyrin_hashes::Hash;
+use pyrin_utils::option::OptionExtensions;
 use std::sync::Arc;
 
 impl BlockBodyProcessor {
@@ -19,7 +19,7 @@ impl BlockBodyProcessor {
     }
 
     fn check_block_is_not_pruned(self: &Arc<Self>, _block: &Block) -> BlockProcessResult<()> {
-        // TODO: In kaspad code it checks that the block is not in the past of the current tips.
+        // TODO: In pyrind code it checks that the block is not in the past of the current tips.
         // We should decide what's the best indication that a block was pruned.
         Ok(())
     }
@@ -92,14 +92,14 @@ mod tests {
         params::DEVNET_PARAMS,
         processes::{transaction_validator::errors::TxRuleError, window::WindowManager},
     };
-    use kaspa_consensus_core::{
+    use pyrin_consensus_core::{
         api::ConsensusApi,
         merkle::calc_hash_merkle_root,
         subnets::SUBNETWORK_ID_NATIVE,
         tx::{Transaction, TransactionInput, TransactionOutpoint},
     };
-    use kaspa_core::assert_match;
-    use kaspa_hashes::Hash;
+    use pyrin_core::assert_match;
+    use pyrin_hashes::Hash;
 
     #[tokio::test]
     async fn validate_body_in_context_test() {

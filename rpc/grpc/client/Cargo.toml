@@ -1,6 +1,6 @@
 [package]
-name = "kaspa-grpc-client"
-description = "Kaspa gRPC client"
+name = "pyrin-grpc-client"
+description = "Pyrin gRPC client"
 rust-version.workspace = true
 version.workspace = true
 edition.workspace = true
@@ -10,12 +10,12 @@ license.workspace = true
 repository.workspace = true
 
 [dependencies]
-kaspa-core.workspace = true
-kaspa-grpc-core.workspace = true
-kaspa-notify.workspace = true
-kaspa-rpc-core.workspace = true
-kaspa-utils.workspace = true
-kaspa-utils-tower.workspace = true
+pyrin-core.workspace = true
+pyrin-grpc-core.workspace = true
+pyrin-notify.workspace = true
+pyrin-rpc-core.workspace = true
+pyrin-utils.workspace = true
+pyrin-utils-tower.workspace = true
 
 async-channel.workspace = true
 async-stream.workspace = true

@@ -1,6 +1,6 @@
 [package]
 name = "rothschild"
-description = "Kaspa Transaction Generator"
+description = "Pyrin Transaction Generator"
 rust-version.workspace = true
 version.workspace = true
 edition.workspace = true
@@ -10,14 +10,14 @@ license.workspace = true
 repository.workspace = true
 
 [dependencies]
-kaspa-addresses.workspace = true
-kaspa-consensus-core.workspace = true
-kaspa-core.workspace = true
-kaspa-grpc-client.workspace = true
-kaspa-notify.workspace = true
-kaspa-rpc-core.workspace = true
-kaspa-txscript.workspace = true
-kaspa-utils.workspace = true
+pyrin-addresses.workspace = true
+pyrin-consensus-core.workspace = true
+pyrin-core.workspace = true
+pyrin-grpc-client.workspace = true
+pyrin-notify.workspace = true
+pyrin-rpc-core.workspace = true
+pyrin-txscript.workspace = true
+pyrin-utils.workspace = true
 
 async-channel.workspace = true
 clap.workspace = true

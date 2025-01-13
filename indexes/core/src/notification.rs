@@ -1,6 +1,6 @@
 use crate::indexed_utxos::{UtxoChanges, UtxoSetByScriptPublicKey};
 use derive_more::Display;
-use kaspa_notify::{
+use pyrin_notify::{
     events::EventType,
     full_featured,
     notification::Notification as NotificationTrait,

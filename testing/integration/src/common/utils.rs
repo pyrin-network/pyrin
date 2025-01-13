@@ -1,7 +1,7 @@
 use super::client::ListeningClient;
 use itertools::Itertools;
-use kaspa_addresses::Address;
-use kaspa_consensus_core::{
+use pyrin_addresses::Address;
+use pyrin_consensus_core::{
     constants::TX_VERSION,
     sign::sign,
     subnets::SUBNETWORK_ID_NATIVE,
@@ -14,10 +14,10 @@ use kaspa_consensus_core::{
         utxo_diff::UtxoDiff,
     },
 };
-use kaspa_core::info;
-use kaspa_grpc_client::GrpcClient;
-use kaspa_rpc_core::{api::rpc::RpcApi, BlockAddedNotification, Notification, VirtualDaaScoreChangedNotification};
-use kaspa_txscript::pay_to_address_script;
+use pyrin_core::info;
+use pyrin_grpc_client::GrpcClient;
+use pyrin_rpc_core::{api::rpc::RpcApi, BlockAddedNotification, Notification, VirtualDaaScoreChangedNotification};
+use pyrin_txscript::pay_to_address_script;
 use rayon::prelude::{IntoParallelIterator, ParallelIterator};
 use secp256k1::Keypair;
 use std::{

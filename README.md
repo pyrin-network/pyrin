@@ -1,7 +1,7 @@
 
 #### Pyrin Node
 
-Pyrin node built on rust, based on [rusty-kaspa](https://github.com/kaspanet/rusty-kaspa)
+Pyrin node built on rust, based on [rusty-pyrin](https://github.com/pyrinnet/rusty-pyrin)
 
 #### Archived 
 Repo moved to https://github.com/PyrinNetwork/pyrin
@@ -317,12 +317,12 @@ Mining is currently supported only on testnet, so once you've setup a test node,
 2. In a separate terminal run the Pyrinpyi/pyrin miner:
 
     ```
-    kaspaminer --testnet --miningaddr kaspatest:qrcqat6l9zcjsu7swnaztqzrv0s7hu04skpaezxk43y4etj8ncwfk308jlcew
+    pyrinminer --testnet --miningaddr pyrintest:qrcqat6l9zcjsu7swnaztqzrv0s7hu04skpaezxk43y4etj8ncwfk308jlcew
     ```
 
     This will create and feed a DAG with the miner getting block templates from the node and submitting them back when mined. The node processes and stores the blocks while applying all currently implemented logic. Execution can be stopped and resumed, the data is persisted in a database.
 
-    You can replace the above mining address with your own address by creating one as described [here](https://github.com/kaspanet/docs/blob/main/Getting%20Started/Full%20Node%20Installation.md#creating-a-wallet-optional). 
+    You can replace the above mining address with your own address by creating one as described [here](https://github.com/pyrinnet/docs/blob/main/Getting%20Started/Full%20Node%20Installation.md#creating-a-wallet-optional). 
 
 </details>
 
@@ -417,7 +417,7 @@ Logging in `pyrin` and `simpa` can be [filtered](https://docs.rs/env_logger/0.10
 2. Adding the --loglevel argument like in the following example:
 
     ```
-    (cargo run --bin pyrin -- --loglevel info,kaspa_rpc_core=trace,kaspa_grpc_core=trace,consensus=trace,kaspa_core=trace) 2>&1 | tee ~/pyrin.log
+    (cargo run --bin pyrin -- --loglevel info,pyrin_rpc_core=trace,pyrin_grpc_core=trace,consensus=trace,pyrin_core=trace) 2>&1 | tee ~/pyrin.log
     ```
     In this command we set the `loglevel` to `INFO`.
 

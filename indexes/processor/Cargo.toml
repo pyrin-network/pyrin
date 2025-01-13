@@ -1,6 +1,6 @@
 [package]
-name = "kaspa-index-processor"
-description = "Kaspa index processor"
+name = "pyrin-index-processor"
+description = "Pyrin index processor"
 rust-version.workspace = true
 version.workspace = true
 edition.workspace = true
@@ -10,16 +10,16 @@ license.workspace = true
 repository.workspace = true
 
 [dependencies]
-kaspa-consensus-core.workspace = true
-kaspa-consensus-notify.workspace = true
-kaspa-consensusmanager.workspace = true
-kaspa-core.workspace = true
-kaspa-database.workspace = true
-kaspa-hashes.workspace = true
-kaspa-index-core.workspace = true
-kaspa-notify.workspace = true
-kaspa-utils.workspace = true
-kaspa-utxoindex.workspace = true
+pyrin-consensus-core.workspace = true
+pyrin-consensus-notify.workspace = true
+pyrin-consensusmanager.workspace = true
+pyrin-core.workspace = true
+pyrin-database.workspace = true
+pyrin-hashes.workspace = true
+pyrin-index-core.workspace = true
+pyrin-notify.workspace = true
+pyrin-utils.workspace = true
+pyrin-utxoindex.workspace = true
 
 async-channel.workspace = true
 async-trait.workspace = true
@@ -32,7 +32,7 @@ tokio = { workspace = true, features = [ "rt-multi-thread", "macros", "signal" ]
 triggered.workspace = true
 
 [dev-dependencies]
-kaspa-consensus.workspace = true
+pyrin-consensus.workspace = true
 parking_lot.workspace = true
 tokio = { workspace = true, features = ["rt", "macros"] }
 rand = {workspace = true,  features = [ "small_rng" ]}

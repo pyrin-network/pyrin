@@ -1,6 +1,6 @@
 [package]
-name = "kaspa-notify"
-description = "Kaspa notification subsystem"
+name = "pyrin-notify"
+description = "Pyrin notification subsystem"
 rust-version.workspace = true
 version.workspace = true
 edition.workspace = true
@@ -18,13 +18,13 @@ futures-util.workspace = true
 futures.workspace = true
 indexmap.workspace = true
 itertools.workspace = true
-kaspa-addresses.workspace = true
-kaspa-consensus-core.workspace = true
-kaspa-core.workspace = true
-kaspa-hashes.workspace = true
-kaspa-txscript-errors.workspace = true
-kaspa-txscript.workspace = true
-kaspa-utils.workspace = true
+pyrin-addresses.workspace = true
+pyrin-consensus-core.workspace = true
+pyrin-core.workspace = true
+pyrin-hashes.workspace = true
+pyrin-txscript-errors.workspace = true
+pyrin-txscript.workspace = true
+pyrin-utils.workspace = true
 log.workspace = true
 parking_lot.workspace = true
 paste.workspace = true
@@ -37,8 +37,8 @@ workflow-log.workspace = true
 
 [dev-dependencies]
 criterion.workspace = true
-kaspa-alloc.workspace = true
-kaspa-math.workspace = true
+pyrin-alloc.workspace = true
+pyrin-math.workspace = true
 tokio = { workspace = true, features = ["rt", "macros"] }
 workflow-perf-monitor.workspace = true
 

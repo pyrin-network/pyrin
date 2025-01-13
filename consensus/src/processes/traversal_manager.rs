@@ -5,13 +5,13 @@ use crate::model::{
     stores::{ghostdag::GhostdagStoreReader, reachability::ReachabilityStoreReader, relations::RelationsStoreReader},
 };
 use itertools::Itertools;
-use kaspa_consensus_core::{
+use pyrin_consensus_core::{
     blockhash::BlockHashExtensions,
     errors::traversal::{TraversalError, TraversalResult},
     BlockHashSet, ChainPath,
 };
-use kaspa_core::trace;
-use kaspa_hashes::Hash;
+use pyrin_core::trace;
+use pyrin_hashes::Hash;
 
 #[derive(Clone)]
 pub struct DagTraversalManager<T: GhostdagStoreReader, U: ReachabilityStoreReader, V: RelationsStoreReader> {

@@ -1,6 +1,6 @@
-use kaspa_core::warn;
-use kaspa_p2p_lib::{common::ProtocolError, Router};
-use kaspa_utils::any::type_name_short;
+use pyrin_core::warn;
+use pyrin_p2p_lib::{common::ProtocolError, Router};
+use pyrin_utils::any::type_name_short;
 use std::sync::Arc;
 
 #[async_trait::async_trait]

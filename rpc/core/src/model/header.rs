@@ -1,1 +1,1 @@
-pub type RpcHeader = kaspa_consensus_core::header::Header;
+pub type RpcHeader = pyrin_consensus_core::header::Header;

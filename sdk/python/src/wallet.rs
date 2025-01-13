@@ -2,13 +2,13 @@ use std::sync::Arc;
 
 use pyo3::prelude::*;
 
-use kaspa_bip32::{Language, Mnemonic, WordCount};
-use kaspa_consensus_core::network::{NetworkId, NetworkType};
-use kaspa_wallet_core::account::Account;
-use kaspa_wallet_core::encryption::EncryptionKind;
-use kaspa_wallet_core::prelude::{AccountCreateArgsBip32, ConnectOptions, ConnectStrategy, PrvKeyDataCreateArgs, Secret};
-use kaspa_wallet_core::wallet::Wallet as WalletCore;
-use kaspa_wallet_core::wallet::WalletCreateArgs;
+use pyrin_bip32::{Language, Mnemonic, WordCount};
+use pyrin_consensus_core::network::{NetworkId, NetworkType};
+use pyrin_wallet_core::account::Account;
+use pyrin_wallet_core::encryption::EncryptionKind;
+use pyrin_wallet_core::prelude::{AccountCreateArgsBip32, ConnectOptions, ConnectStrategy, PrvKeyDataCreateArgs, Secret};
+use pyrin_wallet_core::wallet::Wallet as WalletCore;
+use pyrin_wallet_core::wallet::WalletCreateArgs;
 
 use crate::account::PyAccount;
 
@@ -35,7 +35,7 @@ impl Wallet {
             WalletCore::local_store().unwrap()
         };
 
-        self.wallet = Some(Arc::new(kaspa_wallet_core::prelude::Wallet::try_new(storage, None, None).unwrap()));
+        self.wallet = Some(Arc::new(pyrin_wallet_core::prelude::Wallet::try_new(storage, None, None).unwrap()));
         let wallet = self.wallet.clone().unwrap();
 
         pyo3_asyncio::tokio::future_into_py(py, async move {

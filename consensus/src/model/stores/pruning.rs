@@ -1,10 +1,10 @@
 use std::sync::Arc;
 
-use kaspa_database::prelude::StoreResult;
-use kaspa_database::prelude::DB;
-use kaspa_database::prelude::{BatchDbWriter, CachedDbItem, DirectDbWriter};
-use kaspa_database::registry::DatabaseStorePrefixes;
-use kaspa_hashes::Hash;
+use pyrin_database::prelude::StoreResult;
+use pyrin_database::prelude::DB;
+use pyrin_database::prelude::{BatchDbWriter, CachedDbItem, DirectDbWriter};
+use pyrin_database::registry::DatabaseStorePrefixes;
+use pyrin_hashes::Hash;
 use rocksdb::WriteBatch;
 use serde::{Deserialize, Serialize};
 

@@ -1,13 +1,13 @@
 use crate::{adaptor::Adaptor, manager::Manager};
-use kaspa_consensus_core::config::Config;
-use kaspa_core::{
+use pyrin_consensus_core::config::Config;
+use pyrin_core::{
     debug,
     task::service::{AsyncService, AsyncServiceFuture},
     trace, warn,
 };
-use kaspa_rpc_service::service::RpcCoreService;
-use kaspa_utils::{networking::NetAddress, triggers::SingleTrigger};
-use kaspa_utils_tower::counters::TowerConnectionCounters;
+use pyrin_rpc_service::service::RpcCoreService;
+use pyrin_utils::{networking::NetAddress, triggers::SingleTrigger};
+use pyrin_utils_tower::counters::TowerConnectionCounters;
 use std::sync::Arc;
 use triggered::Listener;
 

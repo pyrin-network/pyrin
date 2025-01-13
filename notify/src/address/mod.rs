@@ -2,8 +2,8 @@ pub mod error;
 pub mod tracker;
 
 pub mod test_helpers {
-    use kaspa_addresses::Address;
-    use kaspa_addresses::{Prefix, Version};
+    use pyrin_addresses::Address;
+    use pyrin_addresses::{Prefix, Version};
 
     pub const ADDRESS_PREFIX: Prefix = Prefix::Mainnet;
 

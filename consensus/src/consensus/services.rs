@@ -18,7 +18,7 @@ use crate::{
 };
 
 use itertools::Itertools;
-use kaspa_txscript::caches::TxScriptCacheCounters;
+use pyrin_txscript::caches::TxScriptCacheCounters;
 use std::sync::{atomic::AtomicBool, Arc};
 
 pub type DbGhostdagManager =

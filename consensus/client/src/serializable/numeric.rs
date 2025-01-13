@@ -9,8 +9,8 @@ use crate::{
 };
 use ahash::AHashMap;
 use cctx::VerifiableTransaction;
-use kaspa_addresses::Address;
-use kaspa_consensus_core::subnets::SubnetworkId;
+use pyrin_addresses::Address;
+use pyrin_consensus_core::subnets::SubnetworkId;
 use workflow_wasm::serde::{from_value, to_value};
 
 pub type SignedTransactionIndexType = u32;

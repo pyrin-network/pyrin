@@ -1,5 +1,5 @@
 //!
-//! Kaspa core wallet account variant implementations.
+//! Pyrin core wallet account variant implementations.
 //!
 
 pub mod bip32;

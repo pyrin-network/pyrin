@@ -1,19 +1,19 @@
 
-## WASM32 bindings for Rusty Kaspa SDK
+## WASM32 bindings for Rusty Pyrin SDK
 
-[<img alt="github" src="https://img.shields.io/badge/github-kaspanet/rusty--kaspa-8da0cb?style=for-the-badge&labelColor=555555&color=8da0cb&logo=github" height="20">](https://github.com/Pyrinpyi/pyrin/tree/master/wasm)
-[<img alt="crates.io" src="https://img.shields.io/crates/v/kaspa-wasm.svg?maxAge=2592000&style=for-the-badge&color=fc8d62&logo=rust" height="20">](https://crates.io/crates/kaspa-wasm)
-[<img alt="docs.rs" src="https://img.shields.io/badge/docs.rs-kaspa--wasm-56c2a5?maxAge=2592000&style=for-the-badge&logo=docs.rs" height="20">](https://docs.rs/kaspa-wasm)
-<img alt="license" src="https://img.shields.io/crates/l/kaspa-wasm.svg?maxAge=2592000&color=6ac&style=for-the-badge&logoColor=fff" height="20">
+[<img alt="github" src="https://img.shields.io/badge/github-pyrinnet/rusty--pyrin-8da0cb?style=for-the-badge&labelColor=555555&color=8da0cb&logo=github" height="20">](https://github.com/Pyrinpyi/pyrin/tree/master/wasm)
+[<img alt="crates.io" src="https://img.shields.io/crates/v/pyrin-wasm.svg?maxAge=2592000&style=for-the-badge&color=fc8d62&logo=rust" height="20">](https://crates.io/crates/pyrin-wasm)
+[<img alt="docs.rs" src="https://img.shields.io/badge/docs.rs-pyrin--wasm-56c2a5?maxAge=2592000&style=for-the-badge&logo=docs.rs" height="20">](https://docs.rs/pyrin-wasm)
+<img alt="license" src="https://img.shields.io/crates/l/pyrin-wasm.svg?maxAge=2592000&color=6ac&style=for-the-badge&logoColor=fff" height="20">
 
 Pyrin WASM32 bindings offer direct integration of Rust code and Pyrin
 codebase within JavaScript and TypeScript environments such as Node.js and Web Browsers.
 
 ## Documentation
 
-- [**integrating with Kaspa** guide](https://kaspa.aspectron.org/)
-- [**Rust** documentation](https://docs.rs/kaspa-wasm/latest/kaspa_wasm/index.html)
-- [**TypeScript** documentation](https://kaspa.aspectron.org/docs/)
+- [**integrating with Pyrin** guide](https://pyrin.aspectron.org/)
+- [**Rust** documentation](https://docs.rs/pyrin-wasm/latest/pyrin_wasm/index.html)
+- [**TypeScript** documentation](https://pyrin.aspectron.org/docs/)
 
 Please note that while WASM directly binds JavaScript and Rust resources, their names on JavaScript side
 are different from their name in Rust as they conform to the 'camelCase' convention in JavaScript and 
@@ -26,9 +26,9 @@ types will not be constrained by TypeScript type definitions.
 
 The SDK is currently separated into the following top-level categories:
 
-- **RPC API** — RPC API for the Kaspa node using WebSockets.
+- **RPC API** — RPC API for the Pyrin node using WebSockets.
 - **Wallet SDK** — Bindings for primitives related to key management and transactions.
-- **Wallet API** — API for the Rusty Kaspa Wallet framework.
+- **Wallet API** — API for the Rusty Pyrin Wallet framework.
 
 ## WASM32 SDK release packages
 
@@ -43,29 +43,29 @@ For NodeJS, the SDK is built as a single package containing all features.
 
 The following is a brief overview of the SDK folder structure (as available in the release):
 
-- `web/kaspa` - **full** Rusty Kaspa WASM32 SDK bindings for use in web browsers.
-- `web/kaspa-rpc` - only the RPC bindings for use in web browsers (reduced WASM binary size).
-- `nodejs/kaspa` - **full** Rusty Kaspa WASM32 SDK bindings for use with NodeJS.
-- `docs` - Rusty Kaspa WASM32 SDK documentation.
+- `web/pyrin` - **full** Rusty Pyrin WASM32 SDK bindings for use in web browsers.
+- `web/pyrin-rpc` - only the RPC bindings for use in web browsers (reduced WASM binary size).
+- `nodejs/pyrin` - **full** Rusty Pyrin WASM32 SDK bindings for use with NodeJS.
+- `docs` - Rusty Pyrin WASM32 SDK documentation.
 - `examples` folders contain examples for NodeJS and web browsers.
 - `examples/data` - folder user by examples for configuration and wallet data storage.
 - `examples/javascript` - JavaScript examples.
 - `examples/javascript/general` - General SDK examples (keys & derivation, addresses, encryption, etc.).
 - `examples/javascript/transactions` - Creating, sending and receiving transactions.
-- `examples/javascript/wallet` - Interfacing with the Rusty Kaspa Wallet framework.
+- `examples/javascript/wallet` - Interfacing with the Rusty Pyrin Wallet framework.
 - `examples/typescript` - TypeScript examples.
 
 If you are using JavaScript and Visual Studio Code, it is highly recommended you replicate 
 the `jsconfig.json` configuration file as is done in the SDK examples. This file allows 
 Visual Studio to provide TypeScript-like code completion, type checking and documentation.
 
-Included documentation in the release can be accessed by loading the `docs/kaspa/index.html` 
+Included documentation in the release can be accessed by loading the `docs/pyrin/index.html` 
 file in a web browser.
 
 ## Building from Source
 
 To build the WASM32 SDK from source, you need to have the Rust environment installed. To do that,
-follow instructions in the [Rusty Kaspa README](https://github.com/Pyrinpyi/pyrin).
+follow instructions in the [Rusty Pyrin README](https://github.com/Pyrinpyi/pyrin).
 
 Once you have Rust installed, you can build the WASM32 SDK as follows:
 
@@ -79,7 +79,7 @@ Please note that to build from source, you need to have TypeDoc installed global
 ## Running Web examples
 
 **IMPORTANT:** To view web examples, you need to serve them from a local web server and
-serve them from the root of the SDK folder (`kaspa-wasm32-sdk` if using a redistributable or
+serve them from the root of the SDK folder (`pyrin-wasm32-sdk` if using a redistributable or
 `pyrin/wasm` if building from source). This is because examples use relative paths.
 WASM32 currently can not be loaded using the `file://` protocol.
 
@@ -123,7 +123,7 @@ There are multiple ways to use RPC:
 - Use `RpcClient` class that handles the connectivity automatically and provides RPC interfaces in a form of async function calls.
 
 **NODEJS:** To use WASM RPC client in the Node.js environment, you need to introduce a W3C WebSocket object 
-before loading the WASM32 library. The compatible WebSocket library is [WebSocket](https://www.npmjs.com/package/websocket) and is included in the `kaspa` NPM package. `kaspa` package is a wrapper around `kaspa-wasm` that imports and installs this WebSocket shim in the `globalThis` object and then re-exports `kaspa-wasm` exports.
+before loading the WASM32 library. The compatible WebSocket library is [WebSocket](https://www.npmjs.com/package/websocket) and is included in the `pyrin` NPM package. `pyrin` package is a wrapper around `pyrin-wasm` that imports and installs this WebSocket shim in the `globalThis` object and then re-exports `pyrin-wasm` exports.
 
 
 ## Loading in a Web App
@@ -132,10 +132,10 @@ before loading the WASM32 library. The compatible WebSocket library is [WebSocke
 <html>
     <head>
         <script type="module">
-            import * as kaspa from './kaspa/kaspa-wasm.js';
+            import * as pyrin from './pyrin/pyrin-wasm.js';
             (async () => {
-                await kaspa.default('./kaspa/kaspa-wasm_bg.wasm');
-                console.log(kaspa.version());
+                await pyrin.default('./pyrin/pyrin-wasm_bg.wasm');
+                console.log(pyrin.version());
                 // ...
             })();
         </script>
@@ -149,7 +149,7 @@ before loading the WASM32 library. The compatible WebSocket library is [WebSocke
 ```javascript
 //
 // W3C WebSocket module shim
-// this is provided by NPM `kaspa` module and is only needed
+// this is provided by NPM `pyrin` module and is only needed
 // if you are building WASM libraries for NodeJS from source
 //
 // @ts-ignore
@@ -160,7 +160,7 @@ let {
     RpcClient,
     Encoding,
     initConsolePanicHook
-} = require('./kaspa');
+} = require('./pyrin');
 
 // enabling console panic hooks allows WASM to print panic details to console
 // initConsolePanicHook();
@@ -188,7 +188,7 @@ const rpc = new RpcClient({
 })();
 ```
 
-For more details, please follow the [**integrating with Kaspa**](https://kaspa.aspectron.org/) guide.
+For more details, please follow the [**integrating with Pyrin**](https://pyrin.aspectron.org/) guide.
 
 ## Creating Documentation
 

@@ -1,13 +1,13 @@
-use kaspa_consensus_core::{blockstatus::BlockStatus, BlockHasher};
-use kaspa_database::registry::DatabaseStorePrefixes;
+use pyrin_consensus_core::{blockstatus::BlockStatus, BlockHasher};
+use pyrin_database::registry::DatabaseStorePrefixes;
 use parking_lot::{RwLock, RwLockWriteGuard};
 use rocksdb::WriteBatch;
 use std::sync::Arc;
 
-use kaspa_database::prelude::{BatchDbWriter, CachedDbAccess, DirectDbWriter};
-use kaspa_database::prelude::{CachePolicy, DB};
-use kaspa_database::prelude::{StoreError, StoreResult};
-use kaspa_hashes::Hash;
+use pyrin_database::prelude::{BatchDbWriter, CachedDbAccess, DirectDbWriter};
+use pyrin_database::prelude::{CachePolicy, DB};
+use pyrin_database::prelude::{StoreError, StoreResult};
+use pyrin_hashes::Hash;
 
 /// Reader API for `StatusesStore`.
 pub trait StatusesStoreReader {

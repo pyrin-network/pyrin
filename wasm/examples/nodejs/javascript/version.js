@@ -1,2 +1,2 @@
-const { version } = require('../../../nodejs/kaspa');
+const { version } = require('../../../nodejs/pyrin');
 console.log("version:", version());

@@ -1,23 +1,23 @@
 use async_channel::unbounded;
-use kaspa_consensus_notify::root::ConsensusNotificationRoot;
-use kaspa_core::time::unix_now;
+use pyrin_consensus_notify::root::ConsensusNotificationRoot;
+use pyrin_core::time::unix_now;
 use std::sync::Arc;
 use std::thread::JoinHandle;
 
 use super::miner::Miner;
 
-use kaspa_consensus::config::Config;
-use kaspa_consensus::consensus::Consensus;
-use kaspa_consensus_core::block::Block;
-use kaspa_database::prelude::ConnBuilder;
-use kaspa_database::utils::DbLifetime;
-use kaspa_database::{create_permanent_db, create_temp_db};
-use kaspa_utils::fd_budget;
-use kaspa_utils::sim::Simulation;
+use pyrin_consensus::config::Config;
+use pyrin_consensus::consensus::Consensus;
+use pyrin_consensus_core::block::Block;
+use pyrin_database::prelude::ConnBuilder;
+use pyrin_database::utils::DbLifetime;
+use pyrin_database::{create_permanent_db, create_temp_db};
+use pyrin_utils::fd_budget;
+use pyrin_utils::sim::Simulation;
 
 type ConsensusWrapper = (Arc<Consensus>, Vec<JoinHandle<()>>, DbLifetime);
 
-pub struct KaspaNetworkSimulator {
+pub struct PyrinNetworkSimulator {
     // Internal simulation env
     pub(super) simulation: Simulation<Block>,
 
@@ -30,7 +30,7 @@ pub struct KaspaNetworkSimulator {
     output_dir: Option<String>, // Possible permanent output directory
 }
 
-impl KaspaNetworkSimulator {
+impl PyrinNetworkSimulator {
     pub fn new(delay: f64, bps: f64, target_blocks: Option<u64>, config: Arc<Config>, output_dir: Option<String>) -> Self {
         Self {
             simulation: Simulation::with_start_time((delay * 1000.0) as u64, config.genesis.timestamp),

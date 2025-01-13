@@ -1,4 +1,4 @@
-use kaspa_rpc_core::RpcError;
+use pyrin_rpc_core::RpcError;
 use thiserror::Error;
 
 #[derive(Error, Debug)]

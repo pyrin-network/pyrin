@@ -1,7 +1,7 @@
 [package]
-name = "kaspa-wallet-core"
-description = "Kaspa wallet library"
-keywords = ["kaspa", "wallet"]
+name = "pyrin-wallet-core"
+description = "Pyrin wallet library"
+keywords = ["pyrin", "wallet"]
 rust-version.workspace = true
 version.workspace = true
 edition.workspace = true
@@ -13,14 +13,14 @@ repository.workspace = true
 [features]
 multi-user = []
 wasm32-keygen = [
-    # "kaspa-consensus-wasm/wasm32-types",
+    # "pyrin-consensus-wasm/wasm32-types",
 ]
 wasm32-core = [
-    "kaspa-consensus-wasm/wasm32-sdk",
-    "kaspa-consensus-core/wasm32-sdk",
-    "kaspa-wrpc-client/wasm32-sdk",
-    "kaspa-wrpc-wasm/wasm32-sdk",
-    "kaspa-wasm-core/wasm32-sdk",
+    "pyrin-consensus-wasm/wasm32-sdk",
+    "pyrin-consensus-core/wasm32-sdk",
+    "pyrin-wrpc-client/wasm32-sdk",
+    "pyrin-wrpc-wasm/wasm32-sdk",
+    "pyrin-wasm-core/wasm32-sdk",
 ]
 wasm32-sdk = [
     "wasm32-core"
@@ -56,24 +56,24 @@ heapless.workspace = true
 hmac.workspace = true
 itertools.workspace = true
 js-sys.workspace = true
-kaspa-addresses.workspace = true
-kaspa-bip32.workspace = true
-kaspa-consensus-client.workspace = true
-kaspa-consensus-core.workspace = true
-kaspa-consensus-wasm.workspace = true
-kaspa-core.workspace = true
-kaspa-hashes.workspace = true
-kaspa-metrics-core.workspace = true
-kaspa-notify.workspace = true
-kaspa-rpc-core.workspace = true
-kaspa-txscript-errors.workspace = true
-kaspa-txscript.workspace = true
-kaspa-utils.workspace = true
-kaspa-wallet-keys.workspace = true
-kaspa-wallet-macros.workspace = true
-kaspa-wasm-core.workspace = true
-kaspa-wrpc-client.workspace = true
-kaspa-wrpc-wasm.workspace = true
+pyrin-addresses.workspace = true
+pyrin-bip32.workspace = true
+pyrin-consensus-client.workspace = true
+pyrin-consensus-core.workspace = true
+pyrin-consensus-wasm.workspace = true
+pyrin-core.workspace = true
+pyrin-hashes.workspace = true
+pyrin-metrics-core.workspace = true
+pyrin-notify.workspace = true
+pyrin-rpc-core.workspace = true
+pyrin-txscript-errors.workspace = true
+pyrin-txscript.workspace = true
+pyrin-utils.workspace = true
+pyrin-wallet-keys.workspace = true
+pyrin-wallet-macros.workspace = true
+pyrin-wasm-core.workspace = true
+pyrin-wrpc-client.workspace = true
+pyrin-wrpc-wasm.workspace = true
 md-5.workspace = true
 pad.workspace = true
 pbkdf2.workspace = true

@@ -1,6 +1,6 @@
 [package]
-name = "kaspa-rpc-core"
-description = "Kaspa RPC core"
+name = "pyrin-rpc-core"
+description = "Pyrin RPC core"
 rust-version.workspace = true
 version.workspace = true
 edition.workspace = true
@@ -11,25 +11,25 @@ repository.workspace = true
 
 [features]
 wasm32-sdk = [
-    "kaspa-consensus-client/wasm32-sdk",
-    "kaspa-consensus-wasm/wasm32-sdk"
+    "pyrin-consensus-client/wasm32-sdk",
+    "pyrin-consensus-wasm/wasm32-sdk"
 ]
 
 [dependencies]
-kaspa-addresses.workspace = true
-kaspa-consensus-core.workspace = true
-kaspa-consensus-client.workspace = true
-kaspa-consensus-notify.workspace = true
-kaspa-consensus-wasm.workspace = true
-kaspa-core.workspace = true
-kaspa-hashes.workspace = true
-kaspa-index-core.workspace = true
-kaspa-math.workspace = true
-kaspa-mining-errors.workspace = true
-kaspa-notify.workspace = true
-kaspa-txscript.workspace = true
-kaspa-utils.workspace = true
-kaspa-rpc-macros.workspace = true
+pyrin-addresses.workspace = true
+pyrin-consensus-core.workspace = true
+pyrin-consensus-client.workspace = true
+pyrin-consensus-notify.workspace = true
+pyrin-consensus-wasm.workspace = true
+pyrin-core.workspace = true
+pyrin-hashes.workspace = true
+pyrin-index-core.workspace = true
+pyrin-math.workspace = true
+pyrin-mining-errors.workspace = true
+pyrin-notify.workspace = true
+pyrin-txscript.workspace = true
+pyrin-utils.workspace = true
+pyrin-rpc-macros.workspace = true
 
 async-channel.workspace = true
 async-trait.workspace = true

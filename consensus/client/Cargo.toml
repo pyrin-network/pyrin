@@ -1,6 +1,6 @@
 [package]
-name = "kaspa-consensus-client"
-description = "Kaspa consensus client data structures"
+name = "pyrin-consensus-client"
+description = "Pyrin consensus client data structures"
 version.workspace = true
 edition.workspace = true
 authors.workspace = true
@@ -13,14 +13,14 @@ wasm32-sdk = []
 wasm32-types = []
 
 [dependencies]
-kaspa-addresses.workspace = true
-kaspa-consensus-core.workspace = true
-kaspa-hashes.workspace = true
-kaspa-math.workspace = true
-kaspa-muhash.workspace = true
-kaspa-txscript.workspace = true
-kaspa-utils.workspace = true
-kaspa-wasm-core.workspace = true
+pyrin-addresses.workspace = true
+pyrin-consensus-core.workspace = true
+pyrin-hashes.workspace = true
+pyrin-math.workspace = true
+pyrin-muhash.workspace = true
+pyrin-txscript.workspace = true
+pyrin-utils.workspace = true
+pyrin-wasm-core.workspace = true
 
 ahash.workspace = true
 cfg-if.workspace = true

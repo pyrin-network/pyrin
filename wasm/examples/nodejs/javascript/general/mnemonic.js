@@ -1,9 +1,9 @@
-const kaspa = require('../../../../nodejs/kaspa');
+const pyrin = require('../../../../nodejs/pyrin');
 const {
     Mnemonic,
-} = kaspa;
+} = pyrin;
 
-kaspa.initConsolePanicHook();
+pyrin.initConsolePanicHook();
 
 (async () => {
 

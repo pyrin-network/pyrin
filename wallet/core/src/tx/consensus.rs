@@ -3,8 +3,8 @@
 //! on the network type or address prefix.
 //!
 
-use kaspa_addresses::{Address, Prefix};
-use kaspa_consensus_core::{
+use pyrin_addresses::{Address, Prefix};
+use pyrin_consensus_core::{
     config::params::{Params, DEVNET_PARAMS, MAINNET_PARAMS, SIMNET_PARAMS, TESTNET_PARAMS},
     network::NetworkType,
 };

@@ -7,9 +7,9 @@ use crate::{
     BlueWorkType,
 };
 use itertools::Itertools;
-use kaspa_hashes::Hash;
+use pyrin_hashes::Hash;
 use thiserror::Error;
-use kaspa_muhash::Blake2Hash;
+use pyrin_muhash::Blake2Hash;
 
 #[derive(Clone, Debug)]
 pub struct VecDisplay<T: Display>(pub Vec<T>);

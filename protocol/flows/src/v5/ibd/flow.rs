@@ -6,28 +6,28 @@ use crate::{
     },
 };
 use futures::future::{join_all, select, try_join_all, Either};
-use kaspa_consensus_core::{
+use pyrin_consensus_core::{
     api::BlockValidationFuture,
     block::Block,
     header::Header,
     pruning::{PruningPointProof, PruningPointsList},
     BlockHashSet,
 };
-use kaspa_consensusmanager::{spawn_blocking, ConsensusProxy, StagingConsensus};
-use kaspa_core::{debug, info, time::unix_now, warn};
-use kaspa_hashes::Hash;
-use kaspa_muhash::MuHash;
-use kaspa_p2p_lib::{
+use pyrin_consensusmanager::{spawn_blocking, ConsensusProxy, StagingConsensus};
+use pyrin_core::{debug, info, time::unix_now, warn};
+use pyrin_hashes::Hash;
+use pyrin_muhash::MuHash;
+use pyrin_p2p_lib::{
     common::ProtocolError,
     convert::model::trusted::TrustedDataPackage,
     dequeue_with_timeout, make_message,
     pb::{
-        kaspad_message::Payload, RequestAntipastMessage, RequestHeadersMessage, RequestIbdBlocksMessage,
+        pyrind_message::Payload, RequestAntipastMessage, RequestHeadersMessage, RequestIbdBlocksMessage,
         RequestPruningPointAndItsAnticoneMessage, RequestPruningPointProofMessage, RequestPruningPointUtxoSetMessage,
     },
     IncomingRoute, Router,
 };
-use kaspa_utils::channel::JobReceiver;
+use pyrin_utils::channel::JobReceiver;
 use std::{
     sync::Arc,
     time::{Duration, Instant},

@@ -1,7 +1,7 @@
 use derive_more::Display;
-use kaspa_consensus_core::{acceptance_data::AcceptanceData, block::Block, utxo::utxo_diff::UtxoDiff};
-use kaspa_hashes::Hash;
-use kaspa_notify::{
+use pyrin_consensus_core::{acceptance_data::AcceptanceData, block::Block, utxo::utxo_diff::UtxoDiff};
+use pyrin_hashes::Hash;
+use pyrin_notify::{
     events::EventType,
     full_featured,
     notification::Notification as NotificationTrait,

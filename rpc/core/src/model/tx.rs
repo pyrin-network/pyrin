@@ -4,24 +4,24 @@ use serde::{Deserialize, Serialize};
 #[cfg(not(target_family = "wasm"))]
 use pyo3::prelude::*;
 
-use kaspa_addresses::Address;
-use kaspa_consensus_core::tx::{
+use pyrin_addresses::Address;
+use pyrin_consensus_core::tx::{
     ScriptPublicKey, ScriptVec, TransactionId, TransactionInput, TransactionOutpoint, TransactionOutput, UtxoEntry,
 };
 
 use crate::prelude::{RpcHash, RpcScriptClass, RpcSubnetworkId};
 
-/// Represents the ID of a Kaspa transaction
+/// Represents the ID of a Pyrin transaction
 pub type RpcTransactionId = TransactionId;
 
 pub type RpcScriptVec = ScriptVec;
 pub type RpcScriptPublicKey = ScriptPublicKey;
 pub type RpcUtxoEntry = UtxoEntry;
 
-/// Represents a Kaspa transaction outpoint
+/// Represents a Pyrin transaction outpoint
 pub type RpcTransactionOutpoint = TransactionOutpoint;
 
-/// Represents a Kaspa transaction input
+/// Represents a Pyrin transaction input
 #[derive(Clone, Debug, Serialize, Deserialize, BorshSerialize, BorshDeserialize)]
 #[serde(rename_all = "camelCase")]
 #[cfg(not(target_family = "wasm"))]
@@ -70,7 +70,7 @@ impl RpcTransactionInput {
     }
 }
 
-/// Represent Kaspa transaction input verbose data
+/// Represent Pyrin transaction input verbose data
 #[derive(Clone, Debug, Serialize, Deserialize, BorshSerialize, BorshDeserialize)]
 #[serde(rename_all = "camelCase")]
 #[cfg(not(target_family = "wasm"))]
@@ -82,7 +82,7 @@ pub struct RpcTransactionInputVerboseData {}
 #[cfg(target_family = "wasm")]
 pub struct RpcTransactionInputVerboseData {}
 
-/// Represents a Kaspad transaction output
+/// Represents a Pyrind transaction output
 #[derive(Clone, Debug, Serialize, Deserialize, BorshSerialize, BorshDeserialize)]
 #[serde(rename_all = "camelCase")]
 #[cfg(not(target_family = "wasm"))]
@@ -117,7 +117,7 @@ impl From<TransactionOutput> for RpcTransactionOutput {
     }
 }
 
-/// Represent Kaspa transaction output verbose data
+/// Represent Pyrin transaction output verbose data
 #[derive(Clone, Debug, Serialize, Deserialize, BorshSerialize, BorshDeserialize)]
 #[serde(rename_all = "camelCase")]
 #[cfg(not(target_family = "wasm"))]
@@ -137,7 +137,7 @@ pub struct RpcTransactionOutputVerboseData {
     pub script_public_key_address: Address,
 }
 
-/// Represents a Kaspa transaction
+/// Represents a Pyrin transaction
 #[derive(Clone, Debug, Serialize, Deserialize, BorshSerialize, BorshDeserialize)]
 #[serde(rename_all = "camelCase")]
 #[cfg(not(target_family = "wasm"))]
@@ -180,7 +180,7 @@ pub struct RpcTransaction {
     pub verbose_data: Option<RpcTransactionVerboseData>,
 }
 
-/// Represent Kaspa transaction verbose data
+/// Represent Pyrin transaction verbose data
 #[derive(Clone, Debug, Serialize, Deserialize, BorshSerialize, BorshDeserialize)]
 #[serde(rename_all = "camelCase")]
 #[cfg(not(target_family = "wasm"))]

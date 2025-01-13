@@ -1,4 +1,4 @@
-use kaspa_rpc_core::Notification;
-use kaspa_utils::channel::Channel;
+use pyrin_rpc_core::Notification;
+use pyrin_utils::channel::Channel;
 
 pub type NotificationChannel = Channel<Notification>;

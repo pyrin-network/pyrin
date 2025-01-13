@@ -1,5 +1,5 @@
 use crate::pb as protowire;
-use kaspa_consensus_core::subnets::SubnetworkId;
+use pyrin_consensus_core::subnets::SubnetworkId;
 
 use super::error::ConversionError;
 

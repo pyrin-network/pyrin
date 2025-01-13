@@ -1,5 +1,5 @@
 use crate::{CountersSnapshot, Monitor};
-use kaspa_core::task::tick::TickService;
+use pyrin_core::task::tick::TickService;
 use std::time::Duration;
 
 pub struct Unspecified {}

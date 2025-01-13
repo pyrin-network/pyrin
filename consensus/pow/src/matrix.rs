@@ -1,5 +1,5 @@
 use crate::xoshiro::XoShiRo256PlusPlus;
-use kaspa_hashes::{Hash, KHeavyHash};
+use pyrin_hashes::{Hash, KHeavyHash};
 use std::mem::MaybeUninit;
 
 #[derive(Debug, Ord, PartialOrd, Eq, PartialEq)]
@@ -145,7 +145,7 @@ where
 mod tests {
     use super::Matrix;
     use crate::xoshiro::XoShiRo256PlusPlus;
-    use kaspa_hashes::Hash;
+    use pyrin_hashes::Hash;
 
     #[test]
     fn test_compute_rank() {

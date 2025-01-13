@@ -2,13 +2,13 @@ mod error;
 mod result;
 
 use clap::Parser;
-use kaspa_consensus_core::network::NetworkType;
-use kaspa_rpc_core::api::ops::RpcApiOps;
-use kaspa_wrpc_server::{
+use pyrin_consensus_core::network::NetworkType;
+use pyrin_rpc_core::api::ops::RpcApiOps;
+use pyrin_wrpc_server::{
     connection::Connection,
     router::Router,
     server::Server,
-    service::{KaspaRpcHandler, Options},
+    service::{PyrinRpcHandler, Options},
 };
 use result::Result;
 use std::sync::Arc;
@@ -82,7 +82,7 @@ async fn main() -> Result<()> {
 
     let counters = Arc::new(WebSocketCounters::default());
     let tasks = threads.unwrap_or_else(num_cpus::get);
-    let rpc_handler = Arc::new(KaspaRpcHandler::new(tasks, encoding, None, options.clone()));
+    let rpc_handler = Arc::new(PyrinRpcHandler::new(tasks, encoding, None, options.clone()));
 
     let router = Arc::new(Router::new(rpc_handler.server.clone()));
     let server = RpcServer::new_with_encoding::<Server, Connection, RpcApiOps, Id64>(
@@ -92,7 +92,7 @@ async fn main() -> Result<()> {
         Some(counters),
     );
 
-    log_info!("Kaspa wRPC server is listening on {}", options.listen_address);
+    log_info!("Pyrin wRPC server is listening on {}", options.listen_address);
     log_info!("Using `{encoding}` protocol encoding");
 
     let config = WebSocketConfig { max_message_size: Some(1024 * 1024 * 1024), ..Default::default() };

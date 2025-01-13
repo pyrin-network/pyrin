@@ -1,13 +1,13 @@
 <html>
     <head>
         <script type="module">
-            import * as kaspa from './kaspa/kaspa_wasm.js';
-            let {PublicKeyGenerator, createAddress, NetworkType, Mnemonic, XPrv} = kaspa;
+            import * as pyrin from './pyrin/pyrin_wasm.js';
+            let {PublicKeyGenerator, createAddress, NetworkType, Mnemonic, XPrv} = pyrin;
             window.XPublicKey = PublicKeyGenerator;
             (async () => {
-                const wasm = await kaspa.default('./kaspa/kaspa_wasm_bg.wasm');
-                console.log("kaspa", kaspa);
-                console.log("version", kaspa.version());
+                const wasm = await pyrin.default('./pyrin/pyrin_wasm_bg.wasm');
+                console.log("pyrin", pyrin);
+                console.log("version", pyrin.version());
                 tests();
             })();
 

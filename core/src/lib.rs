@@ -1,8 +1,8 @@
-extern crate self as kaspa_core;
+extern crate self as pyrin_core;
 
 pub mod assert;
 pub mod console;
-pub mod kaspad_env;
+pub mod pyrind_env;
 pub mod log;
 pub mod panic;
 pub mod time;

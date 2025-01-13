@@ -1,6 +1,6 @@
 use std::{convert::TryInto, mem::size_of};
 
-use kaspa_consensus_core::{
+use pyrin_consensus_core::{
     BlockHashMap,
     BlockHashSet,
     coinbase::*,
@@ -75,7 +75,7 @@ impl CoinbaseManager {
 
         // Precomputed subsidy by month table for the actual block per second rate
         // Here values are rounded up so that we keep the same number of rewarding months as in the original 1 BPS table.
-        // In a 10 BPS network, the induced increase in total rewards is 51 KAS (see tests::calc_high_bps_total_rewards_delta())
+        // In a 10 BPS network, the induced increase in total rewards is 51 PYI (see tests::calc_high_bps_total_rewards_delta())
         let subsidy_by_month_table: SubsidyByMonthTable = core::array::from_fn(|i| (SUBSIDY_BY_MONTH_TABLE[i] + bps - 1) / bps);
         Self {
             coinbase_payload_script_public_key_max_len,
@@ -247,7 +247,7 @@ impl CoinbaseManager {
 }
 
 /*
-    This table was pre-calculated by calling `calcDeflationaryPeriodBlockSubsidyFloatCalc` (in kaspad-go) for all months until reaching 0 subsidy.
+    This table was pre-calculated by calling `calcDeflationaryPeriodBlockSubsidyFloatCalc` (in pyrind-go) for all months until reaching 0 subsidy.
     To regenerate this table, run `TestBuildSubsidyTable` in coinbasemanager_test.go (note the `deflationaryPhaseBaseSubsidy` therein).
     These values apply to 1 block per second.
 */
@@ -272,7 +272,7 @@ const SUBSIDY_BY_MONTH_TABLE: [u64; 366] = [
 
 #[cfg(test)]
 mod tests {
-    use kaspa_consensus_core::{
+    use pyrin_consensus_core::{
         config::params::{Params, TESTNET11_PARAMS},
         constants::LEOR_PER_PYRIN,
         network::NetworkId,
@@ -304,9 +304,9 @@ mod tests {
 
         let delta = total_high_bps_rewards as i64 - total_rewards as i64;
 
-        println!("Total rewards: {} sompi => {} KAS", total_rewards, total_rewards / LEOR_PER_PYRIN);
-        println!("Total high bps rewards: {} sompi => {} KAS", total_high_bps_rewards, total_high_bps_rewards / LEOR_PER_PYRIN);
-        println!("Delta: {} sompi => {} KAS", delta, delta / LEOR_PER_PYRIN as i64);
+        println!("Total rewards: {} sompi => {} PYI", total_rewards, total_rewards / LEOR_PER_PYRIN);
+        println!("Total high bps rewards: {} sompi => {} PYI", total_high_bps_rewards, total_high_bps_rewards / LEOR_PER_PYRIN);
+        println!("Delta: {} sompi => {} PYI", delta, delta / LEOR_PER_PYRIN as i64);
     }
 
     #[test]

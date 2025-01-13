@@ -6,37 +6,37 @@ use crate::flowcontext::{
 use crate::{v5, v6};
 use async_trait::async_trait;
 use futures::future::join_all;
-use kaspa_addressmanager::AddressManager;
-use kaspa_connectionmanager::ConnectionManager;
-use kaspa_consensus_core::api::{BlockValidationFuture, BlockValidationFutures};
-use kaspa_consensus_core::block::Block;
-use kaspa_consensus_core::config::Config;
-use kaspa_consensus_core::errors::block::RuleError;
-use kaspa_consensus_core::tx::{Transaction, TransactionId};
-use kaspa_consensus_notify::{
+use pyrin_addressmanager::AddressManager;
+use pyrin_connectionmanager::ConnectionManager;
+use pyrin_consensus_core::api::{BlockValidationFuture, BlockValidationFutures};
+use pyrin_consensus_core::block::Block;
+use pyrin_consensus_core::config::Config;
+use pyrin_consensus_core::errors::block::RuleError;
+use pyrin_consensus_core::tx::{Transaction, TransactionId};
+use pyrin_consensus_notify::{
     notification::{Notification, PruningPointUtxoSetOverrideNotification},
     root::ConsensusNotificationRoot,
 };
-use kaspa_consensusmanager::{BlockProcessingBatch, ConsensusInstance, ConsensusManager, ConsensusProxy};
-use kaspa_core::{
+use pyrin_consensusmanager::{BlockProcessingBatch, ConsensusInstance, ConsensusManager, ConsensusProxy};
+use pyrin_core::{
     debug, info,
-    kaspad_env::{name, version},
+    pyrind_env::{name, version},
     task::tick::TickService,
 };
-use kaspa_core::{time::unix_now, warn};
-use kaspa_hashes::Hash;
-use kaspa_mining::manager::MiningManagerProxy;
-use kaspa_mining::mempool::tx::{Orphan, Priority};
-use kaspa_notify::notifier::Notify;
-use kaspa_p2p_lib::{
+use pyrin_core::{time::unix_now, warn};
+use pyrin_hashes::Hash;
+use pyrin_mining::manager::MiningManagerProxy;
+use pyrin_mining::mempool::tx::{Orphan, Priority};
+use pyrin_notify::notifier::Notify;
+use pyrin_p2p_lib::{
     common::ProtocolError,
     convert::model::version::Version,
     make_message,
-    pb::{kaspad_message::Payload, InvRelayBlockMessage},
-    ConnectionInitializer, Hub, KaspadHandshake, PeerKey, PeerProperties, Router,
+    pb::{pyrind_message::Payload, InvRelayBlockMessage},
+    ConnectionInitializer, Hub, PyrindHandshake, PeerKey, PeerProperties, Router,
 };
-use kaspa_utils::iter::IterExtensions;
-use kaspa_utils::networking::PeerId;
+use pyrin_utils::iter::IterExtensions;
+use pyrin_utils::networking::PeerId;
 use parking_lot::{Mutex, RwLock};
 use std::collections::HashMap;
 use std::time::Instant;
@@ -519,7 +519,7 @@ impl FlowContext {
     /// Updates the mempool after a new block arrival, relays newly unorphaned transactions
     /// and possibly rebroadcast manually added transactions when not in IBD.
     ///
-    /// _GO-KASPAD: OnNewBlock + broadcastTransactionsAfterBlockAdded_
+    /// _GO-PYRIND: OnNewBlock + broadcastTransactionsAfterBlockAdded_
     pub async fn on_new_block(
         &self,
         consensus: &ConsensusProxy,
@@ -660,7 +660,7 @@ impl FlowContext {
 impl ConnectionInitializer for FlowContext {
     async fn initialize_connection(&self, router: Arc<Router>) -> Result<(), ProtocolError> {
         // Build the handshake object and subscribe to handshake messages
-        let mut handshake = KaspadHandshake::new(&router);
+        let mut handshake = PyrindHandshake::new(&router);
 
         // We start the router receive loop only after we registered to handshake routes
         router.start();

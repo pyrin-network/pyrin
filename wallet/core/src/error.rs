@@ -5,10 +5,10 @@
 use crate::imports::{AccountId, AccountKind, AssocPrvKeyDataIds, PrvKeyDataId};
 use base64::DecodeError;
 use downcast::DowncastError;
-use kaspa_bip32::Error as BIP32Error;
-use kaspa_consensus_core::sign::Error as CoreSignError;
-use kaspa_rpc_core::RpcError as KaspaRpcError;
-use kaspa_wrpc_client::error::Error as KaspaWorkflowRpcError;
+use pyrin_bip32::Error as BIP32Error;
+use pyrin_consensus_core::sign::Error as CoreSignError;
+use pyrin_rpc_core::RpcError as PyrinRpcError;
+use pyrin_wrpc_client::error::Error as PyrinWorkflowRpcError;
 use std::sync::PoisonError;
 use thiserror::Error;
 use wasm_bindgen::JsValue;
@@ -25,19 +25,19 @@ pub enum Error {
     Custom(String),
 
     #[error(transparent)]
-    WalletKeys(#[from] kaspa_wallet_keys::error::Error),
+    WalletKeys(#[from] pyrin_wallet_keys::error::Error),
 
     #[error("please select an account")]
     AccountSelection,
 
     #[error("{0}")]
-    KaspaRpcClientResult(#[from] KaspaRpcError),
+    PyrinRpcClientResult(#[from] PyrinRpcError),
 
     #[error("wRPC -> {0}")]
     RpcError(#[from] RpcError),
 
     #[error("Wallet wRPC -> {0}")]
-    KaspaWorkflowRpcError(#[from] KaspaWorkflowRpcError),
+    PyrinWorkflowRpcError(#[from] PyrinWorkflowRpcError),
 
     #[error("The wallet RPC client is not wRPC")]
     NotWrpcClient,
@@ -100,10 +100,10 @@ pub enum Error {
     NetworkTypeConnected,
 
     #[error("{0}")]
-    NetworkType(#[from] kaspa_consensus_core::network::NetworkTypeError),
+    NetworkType(#[from] pyrin_consensus_core::network::NetworkTypeError),
 
     #[error("{0}")]
-    NetworkId(#[from] kaspa_consensus_core::network::NetworkIdError),
+    NetworkId(#[from] pyrin_consensus_core::network::NetworkIdError),
 
     #[error("The server UTXO index is not enabled")]
     MissingUtxoIndex,
@@ -127,7 +127,7 @@ pub enum Error {
     WorkflowStore(#[from] workflow_store::error::Error),
 
     #[error(transparent)]
-    Address(#[from] kaspa_addresses::AddressError),
+    Address(#[from] pyrin_addresses::AddressError),
 
     #[error("Serde WASM bindgen -> {0}")]
     SerdeWasmBindgen(Sendable<Printable>),
@@ -148,7 +148,7 @@ pub enum Error {
     FromUtf8Error(#[from] std::string::FromUtf8Error),
 
     #[error(transparent)]
-    ScriptBuilderError(#[from] kaspa_txscript::script_builder::ScriptBuilderError),
+    ScriptBuilderError(#[from] pyrin_txscript::script_builder::ScriptBuilderError),
 
     #[error("argon2 -> {0}")]
     Argon2(argon2::Error),
@@ -241,10 +241,10 @@ pub enum Error {
     DowncastError(String),
 
     #[error(transparent)]
-    ConsensusClient(#[from] kaspa_consensus_client::error::Error),
+    ConsensusClient(#[from] pyrin_consensus_client::error::Error),
 
     #[error(transparent)]
-    ConsensusWasm(#[from] kaspa_consensus_wasm::error::Error),
+    ConsensusWasm(#[from] pyrin_consensus_wasm::error::Error),
 
     #[error("Fees::SenderPays or Fees::ReceiverPays are not allowed in sweep transactions")]
     GeneratorFeesInSweepTransaction,
@@ -277,10 +277,10 @@ pub enum Error {
     InvalidRange(u64, u64),
 
     #[error(transparent)]
-    MultisigCreateError(#[from] kaspa_txscript::MultisigCreateError),
+    MultisigCreateError(#[from] pyrin_txscript::MultisigCreateError),
 
     #[error(transparent)]
-    TxScriptError(#[from] kaspa_txscript_errors::TxScriptError),
+    TxScriptError(#[from] pyrin_txscript_errors::TxScriptError),
 
     #[error("Legacy account is not initialized")]
     LegacyAccountNotInitialized,
@@ -325,7 +325,7 @@ pub enum Error {
     InvalidPublicKeyLength,
 
     #[error(transparent)]
-    Metrics(#[from] kaspa_metrics_core::error::Error),
+    Metrics(#[from] pyrin_metrics_core::error::Error),
 }
 
 impl From<Aborted> for Error {

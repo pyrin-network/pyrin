@@ -6,19 +6,19 @@ use parking_lot::RwLock;
 use rocksdb::WriteBatch;
 use serde::{Deserialize, Serialize};
 
-use kaspa_consensus_core::config::Config;
-use kaspa_consensus_core::tx::{ScriptPublicKey, TransactionOutpoint, UtxoEntry};
-use kaspa_consensus_notify::root::ConsensusNotificationRoot;
-use kaspa_consensusmanager::{ConsensusFactory, ConsensusInstance, DynConsensusCtl, SessionLock};
-use kaspa_core::{debug, time::unix_now, warn};
-use kaspa_database::{
+use pyrin_consensus_core::config::Config;
+use pyrin_consensus_core::tx::{ScriptPublicKey, TransactionOutpoint, UtxoEntry};
+use pyrin_consensus_notify::root::ConsensusNotificationRoot;
+use pyrin_consensusmanager::{ConsensusFactory, ConsensusInstance, DynConsensusCtl, SessionLock};
+use pyrin_core::{debug, time::unix_now, warn};
+use pyrin_database::{
     prelude::{
         BatchDbWriter, CachedDbAccess, CachedDbItem, CachePolicy, DB, DirectDbWriter, StoreError, StoreResult, StoreResultExtensions,
     },
     registry::DatabaseStorePrefixes,
 };
-use kaspa_txscript::caches::TxScriptCacheCounters;
-use kaspa_utils::mem_size::MemSizeEstimator;
+use pyrin_txscript::caches::TxScriptCacheCounters;
+use pyrin_utils::mem_size::MemSizeEstimator;
 
 use crate::{model::stores::U64Key, pipeline::ProcessingCounters};
 
@@ -298,7 +298,7 @@ impl ConsensusFactory for Factory {
         };
 
         let dir = self.db_root_dir.join(entry.directory_name.clone());
-        let db = kaspa_database::prelude::ConnBuilder::default()
+        let db = pyrin_database::prelude::ConnBuilder::default()
             .with_db_path(dir)
             .with_parallelism(self.db_parallelism)
             .with_files_limit(self.fd_budget / 2) // active and staging consensuses should have equal budgets
@@ -333,7 +333,7 @@ impl ConsensusFactory for Factory {
 
         let entry = self.management_store.write().new_staging_consensus_entry().unwrap();
         let dir = self.db_root_dir.join(entry.directory_name);
-        let db = kaspa_database::prelude::ConnBuilder::default()
+        let db = pyrin_database::prelude::ConnBuilder::default()
             .with_db_path(dir)
             .with_parallelism(self.db_parallelism)
             .with_files_limit(self.fd_budget / 2) // active and staging consensuses should have equal budgets

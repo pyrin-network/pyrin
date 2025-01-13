@@ -1,11 +1,11 @@
 use crate::tasks::{Stopper, Task};
 use async_channel::Sender;
 use async_trait::async_trait;
-use kaspa_addresses::Address;
-use kaspa_core::warn;
-use kaspa_grpc_client::GrpcClient;
-use kaspa_rpc_core::{api::rpc::RpcApi, GetBlockTemplateResponse, RpcBlock};
-use kaspa_utils::triggers::SingleTrigger;
+use pyrin_addresses::Address;
+use pyrin_core::warn;
+use pyrin_grpc_client::GrpcClient;
+use pyrin_rpc_core::{api::rpc::RpcApi, GetBlockTemplateResponse, RpcBlock};
+use pyrin_utils::triggers::SingleTrigger;
 use parking_lot::Mutex;
 use rand::thread_rng;
 use rand_distr::{Distribution, Exp};

@@ -1,7 +1,7 @@
 pub mod cpu_miner;
 pub mod error;
 pub mod imports;
-pub mod kaspad;
+pub mod pyrind;
 pub mod result;
 
 use std::fmt::Display;
@@ -9,7 +9,7 @@ use std::fmt::Display;
 use crate::imports::*;
 pub use crate::result::Result;
 pub use cpu_miner::{CpuMiner, CpuMinerConfig, CpuMinerCtl};
-pub use kaspad::{Kaspad, KaspadConfig, KaspadCtl};
+pub use pyrind::{Pyrind, PyrindConfig, PyrindCtl};
 use workflow_core::runtime;
 use workflow_node::process::Event as ProcessEvent;
 use workflow_store::fs::*;
@@ -18,8 +18,8 @@ pub static LOCATIONS: &[&str] = &[
     "bin",
     "../target/release",
     "../target/debug",
-    "../../kaspa-cpu-miner/target/debug",
-    "../../kaspa-cpu-miner/target/release",
+    "../../pyrin-cpu-miner/target/debug",
+    "../../pyrin-cpu-miner/target/release",
     "bin/windows-x64",
     "bin/linux-ia32",
     "bin/linux-x64",
@@ -54,24 +54,24 @@ pub async fn locate_binaries(root: &str, name: &str) -> Result<Vec<PathBuf>> {
 
 #[derive(Debug, Clone, BorshDeserialize, BorshSerialize, Serialize, Deserialize)]
 pub enum DaemonKind {
-    Kaspad,
+    Pyrind,
     CpuMiner,
 }
 
 #[derive(Default)]
 pub struct Daemons {
-    pub kaspad: Option<Arc<dyn KaspadCtl + Send + Sync + 'static>>,
-    // pub kaspad_automute : Arc<
+    pub pyrind: Option<Arc<dyn PyrindCtl + Send + Sync + 'static>>,
+    // pub pyrind_automute : Arc<
     pub cpu_miner: Option<Arc<dyn CpuMinerCtl + Send + Sync + 'static>>,
 }
 
 impl Daemons {
     pub fn new() -> Self {
-        Self { kaspad: None, cpu_miner: None }
+        Self { pyrind: None, cpu_miner: None }
     }
 
-    pub fn with_kaspad(mut self, kaspad: Arc<dyn KaspadCtl + Send + Sync + 'static>) -> Self {
-        self.kaspad = Some(kaspad);
+    pub fn with_pyrind(mut self, pyrind: Arc<dyn PyrindCtl + Send + Sync + 'static>) -> Self {
+        self.pyrind = Some(pyrind);
         self
     }
 
@@ -80,12 +80,12 @@ impl Daemons {
         self
     }
 
-    pub fn kaspad(&self) -> Arc<dyn KaspadCtl + Send + Sync + 'static> {
-        self.kaspad.as_ref().expect("accessing Daemons::kaspad while kaspad option is None").clone()
+    pub fn pyrind(&self) -> Arc<dyn PyrindCtl + Send + Sync + 'static> {
+        self.pyrind.as_ref().expect("accessing Daemons::pyrind while pyrind option is None").clone()
     }
 
-    pub fn try_kaspad(&self) -> Option<Arc<dyn KaspadCtl + Send + Sync + 'static>> {
-        self.kaspad.clone()
+    pub fn try_pyrind(&self) -> Option<Arc<dyn PyrindCtl + Send + Sync + 'static>> {
+        self.pyrind.clone()
     }
 
     pub fn cpu_miner(&self) -> Arc<dyn CpuMinerCtl + Send + Sync + 'static> {

@@ -1,7 +1,7 @@
 [package]
 name = "pyrin"
 description = "Pyrin full node daemon"
-keywords = ["pyrin", "kaspa", "blockdag"]
+keywords = ["pyrin", "pyrin", "blockdag"]
 rust-version.workspace = true
 version.workspace = true
 edition.workspace = true
@@ -11,34 +11,34 @@ license.workspace = true
 repository.workspace = true
 
 [lib]
-name = "kaspad_lib"
+name = "pyrind_lib"
 crate-type = ["cdylib", "lib"]
 
 [dependencies]
-kaspa-alloc.workspace = true # This changes the global allocator for all of the next dependencies so should be kept first
+pyrin-alloc.workspace = true # This changes the global allocator for all of the next dependencies so should be kept first
 
-kaspa-addresses.workspace = true
-kaspa-addressmanager.workspace = true
-kaspa-consensus-core.workspace = true
-kaspa-consensus-notify.workspace = true
-kaspa-consensus.workspace = true
-kaspa-consensusmanager.workspace = true
-kaspa-core.workspace = true
-kaspa-database.workspace = true
-kaspa-grpc-server.workspace = true
-kaspa-hashes.workspace = true
-kaspa-index-processor.workspace = true
-kaspa-mining.workspace = true
-kaspa-notify.workspace = true
-kaspa-p2p-flows.workspace = true
-kaspa-perf-monitor.workspace = true
-kaspa-rpc-core.workspace = true
-kaspa-rpc-service.workspace = true
-kaspa-txscript.workspace = true
-kaspa-utils.workspace = true
-kaspa-utils-tower.workspace = true
-kaspa-utxoindex.workspace = true
-kaspa-wrpc-server.workspace = true
+pyrin-addresses.workspace = true
+pyrin-addressmanager.workspace = true
+pyrin-consensus-core.workspace = true
+pyrin-consensus-notify.workspace = true
+pyrin-consensus.workspace = true
+pyrin-consensusmanager.workspace = true
+pyrin-core.workspace = true
+pyrin-database.workspace = true
+pyrin-grpc-server.workspace = true
+pyrin-hashes.workspace = true
+pyrin-index-processor.workspace = true
+pyrin-mining.workspace = true
+pyrin-notify.workspace = true
+pyrin-p2p-flows.workspace = true
+pyrin-perf-monitor.workspace = true
+pyrin-rpc-core.workspace = true
+pyrin-rpc-service.workspace = true
+pyrin-txscript.workspace = true
+pyrin-utils.workspace = true
+pyrin-utils-tower.workspace = true
+pyrin-utxoindex.workspace = true
+pyrin-wrpc-server.workspace = true
 
 async-channel.workspace = true
 clap.workspace = true
@@ -59,5 +59,5 @@ toml = "0.8.10"
 serde_with = "3.7.0"
 
 [features]
-heap = ["dhat", "kaspa-alloc/heap"]
-devnet-prealloc = ["kaspa-consensus/devnet-prealloc"]
+heap = ["dhat", "pyrin-alloc/heap"]
+devnet-prealloc = ["pyrin-consensus/devnet-prealloc"]

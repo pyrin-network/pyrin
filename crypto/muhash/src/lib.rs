@@ -8,8 +8,8 @@ mod pow_hashers;
 
 use crate::u3072::U3072;
 use blake2_hashers::{Hasher, HasherBase, MuHashElementHash, MuHashFinalizeHash};
-use kaspa_hashes::Hash as Blake3Hash;
-use kaspa_math::Uint3072;
+use pyrin_hashes::Hash as Blake3Hash;
+use pyrin_math::Uint3072;
 use rand_chacha::rand_core::{RngCore, SeedableRng};
 use rand_chacha::ChaCha20Rng;
 use serde::{Deserialize, Serialize};
@@ -188,7 +188,7 @@ impl Default for MuHash {
 
 
 use borsh::{BorshDeserialize, BorshSerialize};
-use kaspa_utils::{
+use pyrin_utils::{
     hex::{FromHex, ToHex},
     mem_size::MemSizeEstimator,
     serde_impl_deser_fixed_bytes_ref, serde_impl_ser_fixed_bytes_ref,

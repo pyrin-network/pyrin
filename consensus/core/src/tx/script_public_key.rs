@@ -1,7 +1,7 @@
 use alloc::borrow::Cow;
 use borsh::{BorshDeserialize, BorshSerialize};
 use core::fmt::Formatter;
-use kaspa_utils::{
+use pyrin_utils::{
     hex::{FromHex, ToHex},
     serde_bytes::FromHexVisitor,
 };
@@ -137,7 +137,7 @@ impl<'de: 'a, 'a> Deserialize<'de> for ScriptPublicKey {
             // as serialization will never produce objects.
             // - review multiple integer mappings (are they all needed?)
             // - consider manual marshaling of RPC data structures
-            // (which is now possible due to the introduction of the kaspa-consensus-wasm crate)
+            // (which is now possible due to the introduction of the pyrin-consensus-wasm crate)
             #[cfg(target_arch = "wasm32")]
             fn visit_i32<E>(self, v: i32) -> Result<Self::Value, E>
             where

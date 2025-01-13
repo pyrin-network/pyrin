@@ -1,14 +1,14 @@
 use std::sync::Arc;
 
-use kaspa_addressmanager::NetAddress;
-use kaspa_connectionmanager::ConnectionManager;
-use kaspa_core::{
+use pyrin_addressmanager::NetAddress;
+use pyrin_connectionmanager::ConnectionManager;
+use pyrin_core::{
     task::service::{AsyncService, AsyncServiceFuture},
     trace,
 };
-use kaspa_p2p_lib::Adaptor;
-use kaspa_utils::triggers::SingleTrigger;
-use kaspa_utils_tower::counters::TowerConnectionCounters;
+use pyrin_p2p_lib::Adaptor;
+use pyrin_utils::triggers::SingleTrigger;
+use pyrin_utils_tower::counters::TowerConnectionCounters;
 
 use crate::flow_context::FlowContext;
 

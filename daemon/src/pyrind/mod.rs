@@ -6,7 +6,7 @@ use crate::imports::*;
 use wasm::{version, Process, ProcessEvent, ProcessOptions};
 
 #[derive(Debug, Clone, BorshDeserialize, BorshSerialize, Serialize, Deserialize)]
-pub struct KaspadConfig {
+pub struct PyrindConfig {
     pub mute: bool,
     pub path: Option<String>,
     pub network: Option<NetworkId>,
@@ -29,13 +29,13 @@ pub struct KaspadConfig {
     // ---
 }
 
-impl KaspadConfig {
+impl PyrindConfig {
     pub fn new(path: &str, network_id: NetworkId, mute: bool) -> Self {
         Self { path: Some(path.to_string()), network: Some(network_id), mute, ..Default::default() }
     }
 }
 
-impl Default for KaspadConfig {
+impl Default for PyrindConfig {
     fn default() -> Self {
         Self {
             mute: false,
@@ -63,13 +63,13 @@ impl Default for KaspadConfig {
     }
 }
 
-impl TryFrom<KaspadConfig> for Vec<String> {
+impl TryFrom<PyrindConfig> for Vec<String> {
     type Error = Error;
-    fn try_from(args: KaspadConfig) -> Result<Vec<String>> {
+    fn try_from(args: PyrindConfig) -> Result<Vec<String>> {
         let mut argv = Vec::new();
 
         if args.path.is_none() {
-            return Err(Error::Custom("no kaspad path is specified".to_string()));
+            return Err(Error::Custom("no pyrind path is specified".to_string()));
         }
 
         if args.network.is_none() {
@@ -151,7 +151,7 @@ impl TryFrom<KaspadConfig> for Vec<String> {
 
 struct Inner {
     process: Option<Arc<Process>>,
-    config: Mutex<KaspadConfig>,
+    config: Mutex<PyrindConfig>,
 }
 
 impl Default for Inner {
@@ -160,20 +160,20 @@ impl Default for Inner {
     }
 }
 
-pub struct Kaspad {
+pub struct Pyrind {
     inner: Arc<Mutex<Inner>>,
     mute: Arc<AtomicBool>,
     events: Channel<ProcessEvent>,
 }
 
-impl Default for Kaspad {
+impl Default for Pyrind {
     fn default() -> Self {
         Self { inner: Arc::new(Mutex::new(Inner::default())), mute: Arc::new(AtomicBool::new(false)), events: Channel::unbounded() }
     }
 }
 
-impl Kaspad {
-    pub fn new(args: KaspadConfig) -> Self {
+impl Pyrind {
+    pub fn new(args: PyrindConfig) -> Self {
         Self {
             mute: Arc::new(AtomicBool::new(args.mute)),
             inner: Arc::new(Mutex::new(Inner { config: Mutex::new(args), ..Default::default() })),
@@ -181,7 +181,7 @@ impl Kaspad {
         }
     }
 
-    pub fn configure(&self, config: KaspadConfig) -> Result<()> {
+    pub fn configure(&self, config: PyrindConfig) -> Result<()> {
         self.mute.store(config.mute, Ordering::SeqCst);
         *self.inner().config.lock().unwrap() = config;
         Ok(())
@@ -215,7 +215,7 @@ impl Kaspad {
         let process = self.process();
         if let Some(process) = process {
             if process.is_running() {
-                return Err(Error::Custom("Kaspa node is already running.".to_string()));
+                return Err(Error::Custom("Pyrin node is already running.".to_string()));
             }
         }
 
@@ -236,7 +236,7 @@ impl Kaspad {
             self.mute.load(Ordering::SeqCst),
         );
 
-        // let options = KaspadOptions::new(path,network)?;
+        // let options = PyrindOptions::new(path,network)?;
         let process = Arc::new(Process::new(options));
         self.inner().process.replace(process.clone());
         process.run()?;
@@ -314,9 +314,9 @@ impl Kaspad {
 }
 
 #[async_trait]
-pub trait KaspadCtl {
+pub trait PyrindCtl {
     async fn version(&self) -> Result<String>;
-    async fn configure(&self, config: KaspadConfig) -> Result<()>;
+    async fn configure(&self, config: PyrindConfig) -> Result<()>;
     async fn start(&self) -> Result<()>;
     async fn stop(&self) -> Result<()>;
     async fn join(&self) -> Result<()>;

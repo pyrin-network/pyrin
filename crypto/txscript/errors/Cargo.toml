@@ -1,6 +1,6 @@
 [package]
-name = "kaspa-txscript-errors"
-description = "Kaspa txscript errors"
+name = "pyrin-txscript-errors"
+description = "Pyrin txscript errors"
 rust-version.workspace = true
 version.workspace = true
 edition.workspace = true

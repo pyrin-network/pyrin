@@ -1273,27 +1273,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "csv"
-version = "1.3.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ac574ff4d437a7b5ad237ef331c17ccca63c46479e5b5453eb8e10bb99a759fe"
-dependencies = [
- "csv-core",
- "itoa",
- "ryu",
- "serde",
-]
-
-[[package]]
-name = "csv-core"
-version = "0.1.11"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5efa2b3d7902f4b634a20cae3c9c4e6209dc4779feb6863329607560143efa70"
-dependencies = [
- "memchr",
-]
-
-[[package]]
 name = "ctrlc"
 version = "3.4.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1624,22 +1603,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "dfb9671766b4540458f291944466ca7ce2be8f9c81e510b10b5064a8735998d9"
 dependencies = [
  "digest",
-]
-
-[[package]]
-name = "export-db"
-version = "0.14.5"
-dependencies = [
- "csv",
- "indicatif",
- "kaspa-addresses",
- "kaspa-consensus",
- "kaspa-consensus-core",
- "kaspa-database",
- "kaspa-txscript",
- "kaspa-utils",
- "serde",
- "serde_json",
 ]
 
 [[package]]
@@ -2349,19 +2312,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "indicatif"
-version = "0.17.8"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "763a5a8f45087d6bcea4222e7b72c291a054edf80e4ef6efd2a4979878c7bea3"
-dependencies = [
- "console",
- "instant",
- "number_prefix",
- "portable-atomic",
- "unicode-width",
-]
-
-[[package]]
 name = "indoc"
 version = "2.0.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2494,1355 +2444,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "29c15563dc2726973df627357ce0c9ddddbea194836909d655df6a75d2cf296d"
 dependencies = [
  "wasm-bindgen",
-]
-
-[[package]]
-name = "kaspa-addresses"
-version = "0.14.5"
-dependencies = [
- "borsh",
- "criterion",
- "js-sys",
- "pyo3",
- "serde",
- "smallvec",
- "thiserror",
- "wasm-bindgen",
- "wasm-bindgen-test",
- "web-sys",
- "workflow-log",
- "workflow-wasm",
-]
-
-[[package]]
-name = "kaspa-addressmanager"
-version = "0.14.5"
-dependencies = [
- "borsh",
- "igd-next",
- "itertools 0.11.0",
- "kaspa-consensus-core",
- "kaspa-core",
- "kaspa-database",
- "kaspa-utils",
- "local-ip-address",
- "log",
- "parking_lot",
- "rand 0.8.5",
- "rocksdb",
- "serde",
- "statest",
- "statrs",
- "thiserror",
- "tokio",
-]
-
-[[package]]
-name = "kaspa-alloc"
-version = "0.14.5"
-dependencies = [
- "mimalloc",
-]
-
-[[package]]
-name = "kaspa-bip32"
-version = "0.14.5"
-dependencies = [
- "borsh",
- "bs58",
- "faster-hex 0.6.1",
- "getrandom 0.2.14",
- "hmac",
- "js-sys",
- "kaspa-utils",
- "once_cell",
- "pbkdf2",
- "rand 0.8.5",
- "rand_core 0.6.4",
- "ripemd",
- "secp256k1",
- "serde",
- "sha2",
- "subtle",
- "thiserror",
- "wasm-bindgen",
- "workflow-wasm",
- "zeroize",
-]
-
-[[package]]
-name = "kaspa-cli"
-version = "0.14.5"
-dependencies = [
- "async-trait",
- "borsh",
- "cfg-if 1.0.0",
- "convert_case 0.6.0",
- "dashmap",
- "downcast",
- "faster-hex 0.6.1",
- "futures",
- "js-sys",
- "kaspa-addresses",
- "kaspa-bip32",
- "kaspa-consensus-core",
- "kaspa-core",
- "kaspa-daemon",
- "kaspa-metrics-core",
- "kaspa-rpc-core",
- "kaspa-utils",
- "kaspa-wallet-core",
- "kaspa-wallet-keys",
- "kaspa-wrpc-client",
- "nw-sys",
- "pad",
- "regex",
- "separator",
- "serde",
- "serde_json",
- "textwrap 0.16.1",
- "thiserror",
- "tokio",
- "wasm-bindgen",
- "web-sys",
- "workflow-core",
- "workflow-dom",
- "workflow-log",
- "workflow-node",
- "workflow-nw",
- "workflow-store",
- "workflow-terminal",
- "workflow-wasm",
-]
-
-[[package]]
-name = "kaspa-connectionmanager"
-version = "0.14.5"
-dependencies = [
- "duration-string",
- "futures-util",
- "itertools 0.11.0",
- "kaspa-addressmanager",
- "kaspa-core",
- "kaspa-p2p-lib",
- "kaspa-utils",
- "log",
- "parking_lot",
- "rand 0.8.5",
- "tokio",
-]
-
-[[package]]
-name = "kaspa-consensus"
-version = "0.14.5"
-dependencies = [
- "arc-swap",
- "async-channel 2.2.1",
- "bincode",
- "criterion",
- "crossbeam-channel",
- "faster-hex 0.6.1",
- "flate2",
- "futures-util",
- "indexmap 2.2.6",
- "itertools 0.11.0",
- "kaspa-addresses",
- "kaspa-consensus-core",
- "kaspa-consensus-notify",
- "kaspa-consensusmanager",
- "kaspa-core",
- "kaspa-database",
- "kaspa-hashes",
- "kaspa-math",
- "kaspa-merkle",
- "kaspa-muhash",
- "kaspa-notify",
- "kaspa-pow",
- "kaspa-txscript",
- "kaspa-txscript-errors",
- "kaspa-utils",
- "log",
- "once_cell",
- "parking_lot",
- "rand 0.8.5",
- "rand_distr 0.4.3",
- "rayon",
- "rocksdb",
- "secp256k1",
- "serde",
- "serde_json",
- "smallvec",
- "thiserror",
- "tokio",
-]
-
-[[package]]
-name = "kaspa-consensus-client"
-version = "0.14.5"
-dependencies = [
- "ahash 0.8.11",
- "cfg-if 1.0.0",
- "faster-hex 0.6.1",
- "hex",
- "itertools 0.11.0",
- "js-sys",
- "kaspa-addresses",
- "kaspa-consensus-core",
- "kaspa-hashes",
- "kaspa-math",
- "kaspa-muhash",
- "kaspa-txscript",
- "kaspa-utils",
- "kaspa-wasm-core",
- "rand 0.8.5",
- "secp256k1",
- "serde",
- "serde-wasm-bindgen",
- "serde_json",
- "thiserror",
- "wasm-bindgen",
- "workflow-log",
- "workflow-wasm",
-]
-
-[[package]]
-name = "kaspa-consensus-core"
-version = "0.14.5"
-dependencies = [
- "async-trait",
- "bincode",
- "borsh",
- "cfg-if 1.0.0",
- "criterion",
- "faster-hex 0.6.1",
- "futures-util",
- "getrandom 0.2.14",
- "itertools 0.11.0",
- "js-sys",
- "kaspa-addresses",
- "kaspa-core",
- "kaspa-hashes",
- "kaspa-math",
- "kaspa-merkle",
- "kaspa-muhash",
- "kaspa-txscript-errors",
- "kaspa-utils",
- "pyo3",
- "rand 0.8.5",
- "secp256k1",
- "serde",
- "serde-wasm-bindgen",
- "serde_json",
- "smallvec",
- "thiserror",
- "wasm-bindgen",
- "wasm-bindgen-test",
- "web-sys",
- "workflow-core",
- "workflow-log",
- "workflow-wasm",
-]
-
-[[package]]
-name = "kaspa-consensus-notify"
-version = "0.14.5"
-dependencies = [
- "async-channel 2.2.1",
- "cfg-if 1.0.0",
- "derive_more",
- "futures",
- "kaspa-consensus-core",
- "kaspa-core",
- "kaspa-hashes",
- "kaspa-notify",
- "kaspa-utils",
- "log",
- "paste",
- "thiserror",
- "triggered",
-]
-
-[[package]]
-name = "kaspa-consensus-wasm"
-version = "0.14.5"
-dependencies = [
- "cfg-if 1.0.0",
- "faster-hex 0.6.1",
- "js-sys",
- "kaspa-addresses",
- "kaspa-consensus-client",
- "kaspa-consensus-core",
- "kaspa-hashes",
- "kaspa-txscript",
- "kaspa-utils",
- "rand 0.8.5",
- "secp256k1",
- "serde",
- "serde-wasm-bindgen",
- "serde_json",
- "thiserror",
- "wasm-bindgen",
- "workflow-log",
- "workflow-wasm",
-]
-
-[[package]]
-name = "kaspa-consensusmanager"
-version = "0.14.5"
-dependencies = [
- "duration-string",
- "futures",
- "futures-util",
- "itertools 0.11.0",
- "kaspa-consensus-core",
- "kaspa-consensus-notify",
- "kaspa-core",
- "kaspa-utils",
- "log",
- "parking_lot",
- "rand 0.8.5",
- "tokio",
-]
-
-[[package]]
-name = "kaspa-core"
-version = "0.14.5"
-dependencies = [
- "cfg-if 1.0.0",
- "ctrlc",
- "futures-util",
- "intertrait",
- "log",
- "log4rs",
- "num_cpus",
- "thiserror",
- "tokio",
- "triggered",
- "wasm-bindgen",
- "workflow-log",
-]
-
-[[package]]
-name = "kaspa-daemon"
-version = "0.14.5"
-dependencies = [
- "async-trait",
- "borsh",
- "cfg-if 1.0.0",
- "downcast-rs",
- "futures",
- "kaspa-addresses",
- "kaspa-consensus-core",
- "kaspa-wallet-core",
- "nw-sys",
- "serde",
- "thiserror",
- "workflow-core",
- "workflow-log",
- "workflow-node",
- "workflow-nw",
- "workflow-store",
-]
-
-[[package]]
-name = "kaspa-database"
-version = "0.14.5"
-dependencies = [
- "bincode",
- "enum-primitive-derive",
- "faster-hex 0.6.1",
- "indexmap 2.2.6",
- "itertools 0.11.0",
- "kaspa-hashes",
- "kaspa-utils",
- "num-traits",
- "num_cpus",
- "parking_lot",
- "rand 0.8.5",
- "rocksdb",
- "serde",
- "smallvec",
- "tempfile",
- "thiserror",
-]
-
-[[package]]
-name = "kaspa-grpc-client"
-version = "0.14.5"
-dependencies = [
- "async-channel 2.2.1",
- "async-stream",
- "async-trait",
- "faster-hex 0.6.1",
- "futures",
- "futures-util",
- "h2",
- "itertools 0.11.0",
- "kaspa-core",
- "kaspa-grpc-core",
- "kaspa-notify",
- "kaspa-rpc-core",
- "kaspa-utils",
- "kaspa-utils-tower",
- "log",
- "parking_lot",
- "paste",
- "prost",
- "rand 0.8.5",
- "regex",
- "thiserror",
- "tokio",
- "tokio-stream",
- "tonic",
- "triggered",
-]
-
-[[package]]
-name = "kaspa-grpc-core"
-version = "0.14.5"
-dependencies = [
- "async-channel 2.2.1",
- "async-stream",
- "async-trait",
- "faster-hex 0.6.1",
- "futures",
- "h2",
- "kaspa-consensus-core",
- "kaspa-core",
- "kaspa-muhash",
- "kaspa-notify",
- "kaspa-rpc-core",
- "kaspa-utils",
- "log",
- "paste",
- "prost",
- "rand 0.8.5",
- "regex",
- "thiserror",
- "tokio",
- "tokio-stream",
- "tonic",
- "tonic-build",
- "triggered",
- "workflow-core",
-]
-
-[[package]]
-name = "kaspa-grpc-server"
-version = "0.14.5"
-dependencies = [
- "async-channel 2.2.1",
- "async-stream",
- "async-trait",
- "faster-hex 0.6.1",
- "futures",
- "h2",
- "itertools 0.11.0",
- "kaspa-consensus-core",
- "kaspa-core",
- "kaspa-grpc-client",
- "kaspa-grpc-core",
- "kaspa-notify",
- "kaspa-rpc-core",
- "kaspa-rpc-macros",
- "kaspa-rpc-service",
- "kaspa-utils",
- "kaspa-utils-tower",
- "log",
- "once_cell",
- "parking_lot",
- "paste",
- "prost",
- "rand 0.8.5",
- "thiserror",
- "tokio",
- "tokio-stream",
- "tonic",
- "triggered",
- "uuid 1.6.1",
-]
-
-[[package]]
-name = "kaspa-hashes"
-version = "0.14.5"
-dependencies = [
- "blake3",
- "borsh",
- "cc",
- "criterion",
- "faster-hex 0.6.1",
- "js-sys",
- "kaspa-math",
- "kaspa-utils",
- "keccak",
- "once_cell",
- "pyo3",
- "rand 0.8.5",
- "serde",
- "sha2",
- "sha3",
- "wasm-bindgen",
- "workflow-wasm",
-]
-
-[[package]]
-name = "kaspa-index-core"
-version = "0.14.5"
-dependencies = [
- "async-channel 2.2.1",
- "async-trait",
- "derive_more",
- "futures",
- "kaspa-consensus-core",
- "kaspa-hashes",
- "kaspa-notify",
- "kaspa-utils",
- "log",
- "paste",
- "serde",
- "thiserror",
- "triggered",
-]
-
-[[package]]
-name = "kaspa-index-processor"
-version = "0.14.5"
-dependencies = [
- "async-channel 2.2.1",
- "async-trait",
- "derive_more",
- "futures",
- "kaspa-consensus",
- "kaspa-consensus-core",
- "kaspa-consensus-notify",
- "kaspa-consensusmanager",
- "kaspa-core",
- "kaspa-database",
- "kaspa-hashes",
- "kaspa-index-core",
- "kaspa-notify",
- "kaspa-utils",
- "kaspa-utxoindex",
- "log",
- "parking_lot",
- "paste",
- "rand 0.8.5",
- "thiserror",
- "tokio",
- "triggered",
-]
-
-[[package]]
-name = "kaspa-math"
-version = "0.14.5"
-dependencies = [
- "borsh",
- "criterion",
- "faster-hex 0.6.1",
- "js-sys",
- "kaspa-utils",
- "malachite-base",
- "malachite-nz",
- "pyo3",
- "rand_chacha 0.3.1",
- "serde",
- "serde-wasm-bindgen",
- "thiserror",
- "wasm-bindgen",
- "workflow-core",
- "workflow-log",
- "workflow-wasm",
-]
-
-[[package]]
-name = "kaspa-merkle"
-version = "0.14.5"
-dependencies = [
- "kaspa-hashes",
-]
-
-[[package]]
-name = "kaspa-metrics-core"
-version = "0.14.5"
-dependencies = [
- "async-trait",
- "borsh",
- "futures",
- "kaspa-core",
- "kaspa-rpc-core",
- "separator",
- "serde",
- "thiserror",
- "workflow-core",
- "workflow-log",
-]
-
-[[package]]
-name = "kaspa-mining"
-version = "0.14.5"
-dependencies = [
- "criterion",
- "futures-util",
- "itertools 0.11.0",
- "kaspa-addresses",
- "kaspa-consensus-core",
- "kaspa-consensusmanager",
- "kaspa-core",
- "kaspa-hashes",
- "kaspa-mining-errors",
- "kaspa-muhash",
- "kaspa-txscript",
- "kaspa-utils",
- "log",
- "parking_lot",
- "rand 0.8.5",
- "secp256k1",
- "serde",
- "smallvec",
- "thiserror",
- "tokio",
-]
-
-[[package]]
-name = "kaspa-mining-errors"
-version = "0.14.5"
-dependencies = [
- "kaspa-consensus-core",
- "thiserror",
-]
-
-[[package]]
-name = "kaspa-muhash"
-version = "0.14.5"
-dependencies = [
- "blake2b_simd",
- "borsh",
- "criterion",
- "faster-hex 0.6.1",
- "hex",
- "kaspa-hashes",
- "kaspa-math",
- "kaspa-utils",
- "keccak",
- "once_cell",
- "pyo3",
- "rand 0.8.5",
- "rand_chacha 0.3.1",
- "rayon",
- "serde",
- "sha2",
- "sha3",
- "wasm-bindgen",
- "workflow-wasm",
-]
-
-[[package]]
-name = "kaspa-notify"
-version = "0.14.5"
-dependencies = [
- "async-channel 2.2.1",
- "async-trait",
- "borsh",
- "criterion",
- "derive_more",
- "futures",
- "futures-util",
- "indexmap 2.2.6",
- "itertools 0.11.0",
- "kaspa-addresses",
- "kaspa-alloc",
- "kaspa-consensus-core",
- "kaspa-core",
- "kaspa-hashes",
- "kaspa-math",
- "kaspa-txscript",
- "kaspa-txscript-errors",
- "kaspa-utils",
- "log",
- "parking_lot",
- "paste",
- "rand 0.8.5",
- "serde",
- "thiserror",
- "tokio",
- "triggered",
- "workflow-core",
- "workflow-log",
- "workflow-perf-monitor",
-]
-
-[[package]]
-name = "kaspa-p2p-flows"
-version = "0.14.5"
-dependencies = [
- "async-trait",
- "chrono",
- "futures",
- "indexmap 2.2.6",
- "itertools 0.11.0",
- "kaspa-addressmanager",
- "kaspa-connectionmanager",
- "kaspa-consensus-core",
- "kaspa-consensus-notify",
- "kaspa-consensusmanager",
- "kaspa-core",
- "kaspa-hashes",
- "kaspa-mining",
- "kaspa-muhash",
- "kaspa-notify",
- "kaspa-p2p-lib",
- "kaspa-utils",
- "kaspa-utils-tower",
- "log",
- "parking_lot",
- "rand 0.8.5",
- "thiserror",
- "tokio",
- "tokio-stream",
- "uuid 1.6.1",
-]
-
-[[package]]
-name = "kaspa-p2p-lib"
-version = "0.14.5"
-dependencies = [
- "borsh",
- "ctrlc",
- "futures",
- "h2",
- "hex",
- "itertools 0.11.0",
- "kaspa-consensus-core",
- "kaspa-core",
- "kaspa-hashes",
- "kaspa-math",
- "kaspa-mining-errors",
- "kaspa-muhash",
- "kaspa-utils",
- "kaspa-utils-tower",
- "log",
- "parking_lot",
- "prost",
- "rand 0.8.5",
- "seqlock",
- "serde",
- "thiserror",
- "tokio",
- "tokio-stream",
- "tonic",
- "tonic-build",
- "uuid 1.6.1",
-]
-
-[[package]]
-name = "kaspa-perf-monitor"
-version = "0.14.5"
-dependencies = [
- "kaspa-core",
- "log",
- "portable-atomic",
- "thiserror",
- "tokio",
- "workflow-perf-monitor",
-]
-
-[[package]]
-name = "kaspa-pow"
-version = "0.14.5"
-dependencies = [
- "criterion",
- "js-sys",
- "kaspa-consensus-client",
- "kaspa-consensus-core",
- "kaspa-hashes",
- "kaspa-math",
- "kaspa-utils",
- "num",
- "wasm-bindgen",
- "workflow-wasm",
-]
-
-[[package]]
-name = "kaspa-resolver"
-version = "0.14.5"
-dependencies = [
- "ahash 0.8.11",
- "axum 0.7.5",
- "cfg-if 1.0.0",
- "clap 4.5.4",
- "console",
- "convert_case 0.6.0",
- "futures",
- "kaspa-consensus-core",
- "kaspa-rpc-core",
- "kaspa-utils",
- "kaspa-wrpc-client",
- "mime",
- "serde",
- "serde_json",
- "thiserror",
- "tokio",
- "toml 0.8.12",
- "tower",
- "tower-http 0.5.2",
- "tracing-subscriber",
- "workflow-core",
- "workflow-http",
- "workflow-log",
- "xxhash-rust",
-]
-
-[[package]]
-name = "kaspa-rpc-core"
-version = "0.14.5"
-dependencies = [
- "async-channel 2.2.1",
- "async-trait",
- "borsh",
- "cfg-if 1.0.0",
- "derive_more",
- "downcast",
- "faster-hex 0.6.1",
- "hex",
- "js-sys",
- "kaspa-addresses",
- "kaspa-consensus-client",
- "kaspa-consensus-core",
- "kaspa-consensus-notify",
- "kaspa-consensus-wasm",
- "kaspa-core",
- "kaspa-hashes",
- "kaspa-index-core",
- "kaspa-math",
- "kaspa-mining-errors",
- "kaspa-notify",
- "kaspa-rpc-macros",
- "kaspa-txscript",
- "kaspa-utils",
- "log",
- "paste",
- "pyo3",
- "serde",
- "serde-wasm-bindgen",
- "serde_json",
- "smallvec",
- "thiserror",
- "uuid 1.6.1",
- "wasm-bindgen",
- "workflow-core",
- "workflow-wasm",
-]
-
-[[package]]
-name = "kaspa-rpc-macros"
-version = "0.14.5"
-dependencies = [
- "convert_case 0.6.0",
- "proc-macro-error",
- "proc-macro2",
- "quote",
- "regex",
- "syn 1.0.109",
-]
-
-[[package]]
-name = "kaspa-rpc-service"
-version = "0.14.5"
-dependencies = [
- "async-trait",
- "kaspa-addresses",
- "kaspa-consensus-core",
- "kaspa-consensus-notify",
- "kaspa-consensusmanager",
- "kaspa-core",
- "kaspa-hashes",
- "kaspa-index-core",
- "kaspa-math",
- "kaspa-mining",
- "kaspa-notify",
- "kaspa-p2p-flows",
- "kaspa-p2p-lib",
- "kaspa-perf-monitor",
- "kaspa-rpc-core",
- "kaspa-txscript",
- "kaspa-utils",
- "kaspa-utils-tower",
- "kaspa-utxoindex",
- "log",
- "tokio",
- "triggered",
- "workflow-rpc",
-]
-
-[[package]]
-name = "kaspa-testing-integration"
-version = "0.14.5"
-dependencies = [
- "async-channel 2.2.1",
- "async-trait",
- "bincode",
- "chrono",
- "clap 4.5.4",
- "criterion",
- "crossbeam-channel",
- "dhat",
- "faster-hex 0.6.1",
- "flate2",
- "futures-util",
- "indexmap 2.2.6",
- "itertools 0.11.0",
- "kaspa-addresses",
- "kaspa-alloc",
- "kaspa-bip32",
- "kaspa-consensus",
- "kaspa-consensus-core",
- "kaspa-consensus-notify",
- "kaspa-consensusmanager",
- "kaspa-core",
- "kaspa-database",
- "kaspa-grpc-client",
- "kaspa-grpc-core",
- "kaspa-grpc-server",
- "kaspa-hashes",
- "kaspa-index-processor",
- "kaspa-math",
- "kaspa-merkle",
- "kaspa-muhash",
- "kaspa-notify",
- "kaspa-pow",
- "kaspa-rpc-core",
- "kaspa-rpc-service",
- "kaspa-txscript",
- "kaspa-txscript-errors",
- "kaspa-utils",
- "kaspa-utxoindex",
- "kaspa-wrpc-server",
- "log",
- "parking_lot",
- "pyrin",
- "rand 0.8.5",
- "rand_distr 0.4.3",
- "rayon",
- "rocksdb",
- "secp256k1",
- "serde",
- "serde_json",
- "smallvec",
- "tempfile",
- "thiserror",
- "tokio",
- "workflow-perf-monitor",
-]
-
-[[package]]
-name = "kaspa-txscript"
-version = "0.14.5"
-dependencies = [
- "blake3",
- "borsh",
- "criterion",
- "hex",
- "indexmap 2.2.6",
- "itertools 0.11.0",
- "kaspa-addresses",
- "kaspa-consensus-core",
- "kaspa-hashes",
- "kaspa-txscript-errors",
- "log",
- "parking_lot",
- "pyo3",
- "rand 0.8.5",
- "secp256k1",
- "serde",
- "serde_json",
- "sha2",
- "smallvec",
- "thiserror",
- "wasm-bindgen",
-]
-
-[[package]]
-name = "kaspa-txscript-errors"
-version = "0.14.5"
-dependencies = [
- "secp256k1",
- "thiserror",
-]
-
-[[package]]
-name = "kaspa-utils"
-version = "0.14.5"
-dependencies = [
- "async-channel 2.2.1",
- "async-trait",
- "bincode",
- "borsh",
- "cfg-if 1.0.0",
- "criterion",
- "event-listener 2.5.3",
- "faster-hex 0.6.1",
- "futures-util",
- "ipnet",
- "itertools 0.11.0",
- "log",
- "parking_lot",
- "pyo3",
- "rand 0.8.5",
- "rlimit",
- "serde",
- "serde_json",
- "smallvec",
- "thiserror",
- "tokio",
- "triggered",
- "uuid 1.6.1",
- "wasm-bindgen",
-]
-
-[[package]]
-name = "kaspa-utils-tower"
-version = "0.14.5"
-dependencies = [
- "cfg-if 1.0.0",
- "futures",
- "hyper 0.14.28",
- "log",
- "pin-project-lite",
- "tokio",
- "tower",
- "tower-http 0.4.4",
-]
-
-[[package]]
-name = "kaspa-utxoindex"
-version = "0.14.5"
-dependencies = [
- "futures",
- "kaspa-consensus",
- "kaspa-consensus-core",
- "kaspa-consensusmanager",
- "kaspa-core",
- "kaspa-database",
- "kaspa-hashes",
- "kaspa-index-core",
- "kaspa-utils",
- "log",
- "parking_lot",
- "rand 0.8.5",
- "rocksdb",
- "serde",
- "thiserror",
-]
-
-[[package]]
-name = "kaspa-wallet"
-version = "0.14.5"
-dependencies = [
- "async-std",
- "async-trait",
- "kaspa-cli",
- "tokio",
- "workflow-log",
- "workflow-terminal",
-]
-
-[[package]]
-name = "kaspa-wallet-cli-wasm"
-version = "0.14.5"
-dependencies = [
- "async-trait",
- "js-sys",
- "kaspa-cli",
- "wasm-bindgen",
- "wasm-bindgen-futures",
- "workflow-log",
- "workflow-terminal",
- "workflow-wasm",
-]
-
-[[package]]
-name = "kaspa-wallet-core"
-version = "0.14.5"
-dependencies = [
- "aes",
- "ahash 0.8.11",
- "argon2",
- "async-channel 2.2.1",
- "async-std",
- "async-trait",
- "base64 0.21.7",
- "borsh",
- "cfb-mode",
- "cfg-if 1.0.0",
- "chacha20poly1305",
- "convert_case 0.6.0",
- "crypto_box",
- "dashmap",
- "derivative",
- "downcast",
- "evpkdf",
- "faster-hex 0.6.1",
- "fixedstr",
- "futures",
- "heapless",
- "hex-literal",
- "hmac",
- "home",
- "indexed_db_futures",
- "itertools 0.11.0",
- "js-sys",
- "kaspa-addresses",
- "kaspa-bip32",
- "kaspa-consensus-client",
- "kaspa-consensus-core",
- "kaspa-consensus-wasm",
- "kaspa-core",
- "kaspa-hashes",
- "kaspa-metrics-core",
- "kaspa-notify",
- "kaspa-rpc-core",
- "kaspa-txscript",
- "kaspa-txscript-errors",
- "kaspa-utils",
- "kaspa-wallet-keys",
- "kaspa-wallet-macros",
- "kaspa-wasm-core",
- "kaspa-wrpc-client",
- "kaspa-wrpc-wasm",
- "md-5",
- "pad",
- "pbkdf2",
- "rand 0.8.5",
- "regex",
- "ripemd",
- "secp256k1",
- "separator",
- "serde",
- "serde-wasm-bindgen",
- "serde_json",
- "serde_repr",
- "sha1",
- "sha2",
- "slugify-rs",
- "sorted-insert",
- "thiserror",
- "tokio",
- "wasm-bindgen",
- "wasm-bindgen-futures",
- "web-sys",
- "workflow-core",
- "workflow-log",
- "workflow-node",
- "workflow-rpc",
- "workflow-store",
- "workflow-wasm",
- "xxhash-rust",
- "zeroize",
-]
-
-[[package]]
-name = "kaspa-wallet-keys"
-version = "0.14.5"
-dependencies = [
- "async-trait",
- "borsh",
- "downcast",
- "faster-hex 0.6.1",
- "hmac",
- "js-sys",
- "kaspa-addresses",
- "kaspa-bip32",
- "kaspa-consensus-core",
- "kaspa-txscript",
- "kaspa-txscript-errors",
- "kaspa-utils",
- "kaspa-wasm-core",
- "rand 0.8.5",
- "ripemd",
- "secp256k1",
- "serde",
- "serde-wasm-bindgen",
- "serde_json",
- "sha2",
- "thiserror",
- "tokio",
- "wasm-bindgen",
- "wasm-bindgen-futures",
- "workflow-core",
- "workflow-wasm",
- "zeroize",
-]
-
-[[package]]
-name = "kaspa-wallet-macros"
-version = "0.14.5"
-dependencies = [
- "convert_case 0.5.0",
- "proc-macro-error",
- "proc-macro2",
- "quote",
- "regex",
- "syn 1.0.109",
- "xxhash-rust",
-]
-
-[[package]]
-name = "kaspa-wasm"
-version = "0.14.5"
-dependencies = [
- "cfg-if 1.0.0",
- "js-sys",
- "kaspa-addresses",
- "kaspa-consensus-core",
- "kaspa-consensus-wasm",
- "kaspa-core",
- "kaspa-math",
- "kaspa-pow",
- "kaspa-rpc-core",
- "kaspa-utils",
- "kaspa-wallet-core",
- "kaspa-wallet-keys",
- "kaspa-wasm-core",
- "kaspa-wrpc-client",
- "kaspa-wrpc-wasm",
- "num",
- "wasm-bindgen",
- "workflow-core",
- "workflow-log",
- "workflow-wasm",
-]
-
-[[package]]
-name = "kaspa-wasm-core"
-version = "0.14.5"
-dependencies = [
- "faster-hex 0.6.1",
- "js-sys",
- "wasm-bindgen",
-]
-
-[[package]]
-name = "kaspa-wrpc-client"
-version = "0.14.5"
-dependencies = [
- "async-std",
- "async-trait",
- "borsh",
- "cfg-if 1.0.0",
- "futures",
- "js-sys",
- "kaspa-addresses",
- "kaspa-consensus-core",
- "kaspa-consensus-wasm",
- "kaspa-notify",
- "kaspa-rpc-core",
- "kaspa-rpc-macros",
- "paste",
- "rand 0.8.5",
- "regex",
- "serde",
- "serde-wasm-bindgen",
- "serde_json",
- "thiserror",
- "toml 0.8.12",
- "wasm-bindgen",
- "wasm-bindgen-futures",
- "workflow-core",
- "workflow-dom",
- "workflow-http",
- "workflow-log",
- "workflow-rpc",
- "workflow-wasm",
-]
-
-[[package]]
-name = "kaspa-wrpc-example-subscriber"
-version = "0.14.5"
-dependencies = [
- "ctrlc",
- "futures",
- "kaspa-consensus-core",
- "kaspa-notify",
- "kaspa-rpc-core",
- "kaspa-wrpc-client",
- "tokio",
- "workflow-core",
- "workflow-log",
-]
-
-[[package]]
-name = "kaspa-wrpc-proxy"
-version = "0.14.5"
-dependencies = [
- "async-trait",
- "clap 4.5.4",
- "kaspa-consensus-core",
- "kaspa-grpc-client",
- "kaspa-rpc-core",
- "kaspa-rpc-macros",
- "kaspa-wrpc-server",
- "num_cpus",
- "thiserror",
- "tokio",
- "workflow-core",
- "workflow-log",
- "workflow-rpc",
-]
-
-[[package]]
-name = "kaspa-wrpc-server"
-version = "0.14.5"
-dependencies = [
- "async-trait",
- "borsh",
- "futures",
- "kaspa-consensus-core",
- "kaspa-core",
- "kaspa-grpc-client",
- "kaspa-notify",
- "kaspa-rpc-core",
- "kaspa-rpc-macros",
- "kaspa-rpc-service",
- "kaspa-utils",
- "log",
- "num_cpus",
- "openssl",
- "paste",
- "serde",
- "thiserror",
- "tokio",
- "workflow-core",
- "workflow-log",
- "workflow-rpc",
-]
-
-[[package]]
-name = "kaspa-wrpc-wasm"
-version = "0.14.5"
-dependencies = [
- "ahash 0.8.11",
- "async-std",
- "cfg-if 1.0.0",
- "futures",
- "js-sys",
- "kaspa-addresses",
- "kaspa-consensus-client",
- "kaspa-consensus-core",
- "kaspa-consensus-wasm",
- "kaspa-notify",
- "kaspa-rpc-core",
- "kaspa-rpc-macros",
- "kaspa-wasm-core",
- "kaspa-wrpc-client",
- "serde",
- "serde-wasm-bindgen",
- "serde_json",
- "wasm-bindgen",
- "wasm-bindgen-futures",
- "workflow-core",
- "workflow-log",
- "workflow-rpc",
- "workflow-wasm",
 ]
 
 [[package]]
@@ -4486,12 +3087,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "number_prefix"
-version = "0.4.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "830b246a0e5f20af87141b25c173cd1b609bd7779a4617d6ec582abaf90870f3"
-
-[[package]]
 name = "numtoa"
 version = "0.2.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -5024,31 +3619,31 @@ dependencies = [
  "dirs",
  "futures",
  "futures-util",
- "kaspa-addresses",
- "kaspa-addressmanager",
- "kaspa-alloc",
- "kaspa-consensus",
- "kaspa-consensus-core",
- "kaspa-consensus-notify",
- "kaspa-consensusmanager",
- "kaspa-core",
- "kaspa-database",
- "kaspa-grpc-server",
- "kaspa-hashes",
- "kaspa-index-processor",
- "kaspa-mining",
- "kaspa-notify",
- "kaspa-p2p-flows",
- "kaspa-perf-monitor",
- "kaspa-rpc-core",
- "kaspa-rpc-service",
- "kaspa-txscript",
- "kaspa-utils",
- "kaspa-utils-tower",
- "kaspa-utxoindex",
- "kaspa-wrpc-server",
  "log",
  "num_cpus",
+ "pyrin-addresses",
+ "pyrin-addressmanager",
+ "pyrin-alloc",
+ "pyrin-consensus",
+ "pyrin-consensus-core",
+ "pyrin-consensus-notify",
+ "pyrin-consensusmanager",
+ "pyrin-core",
+ "pyrin-database",
+ "pyrin-grpc-server",
+ "pyrin-hashes",
+ "pyrin-index-processor",
+ "pyrin-mining",
+ "pyrin-notify",
+ "pyrin-p2p-flows",
+ "pyrin-perf-monitor",
+ "pyrin-rpc-core",
+ "pyrin-rpc-service",
+ "pyrin-txscript",
+ "pyrin-utils",
+ "pyrin-utils-tower",
+ "pyrin-utxoindex",
+ "pyrin-wrpc-server",
  "rand 0.8.5",
  "rayon",
  "serde",
@@ -5061,21 +3656,1370 @@ dependencies = [
 ]
 
 [[package]]
+name = "pyrin-addresses"
+version = "0.14.5"
+dependencies = [
+ "borsh",
+ "criterion",
+ "js-sys",
+ "pyo3",
+ "serde",
+ "smallvec",
+ "thiserror",
+ "wasm-bindgen",
+ "wasm-bindgen-test",
+ "web-sys",
+ "workflow-log",
+ "workflow-wasm",
+]
+
+[[package]]
+name = "pyrin-addressmanager"
+version = "0.14.5"
+dependencies = [
+ "borsh",
+ "igd-next",
+ "itertools 0.11.0",
+ "local-ip-address",
+ "log",
+ "parking_lot",
+ "pyrin-consensus-core",
+ "pyrin-core",
+ "pyrin-database",
+ "pyrin-utils",
+ "rand 0.8.5",
+ "rocksdb",
+ "serde",
+ "statest",
+ "statrs",
+ "thiserror",
+ "tokio",
+]
+
+[[package]]
+name = "pyrin-alloc"
+version = "0.14.5"
+dependencies = [
+ "mimalloc",
+]
+
+[[package]]
+name = "pyrin-bip32"
+version = "0.14.5"
+dependencies = [
+ "borsh",
+ "bs58",
+ "faster-hex 0.6.1",
+ "getrandom 0.2.14",
+ "hmac",
+ "js-sys",
+ "once_cell",
+ "pbkdf2",
+ "pyrin-utils",
+ "rand 0.8.5",
+ "rand_core 0.6.4",
+ "ripemd",
+ "secp256k1",
+ "serde",
+ "sha2",
+ "subtle",
+ "thiserror",
+ "wasm-bindgen",
+ "workflow-wasm",
+ "zeroize",
+]
+
+[[package]]
+name = "pyrin-cli"
+version = "0.14.5"
+dependencies = [
+ "async-trait",
+ "borsh",
+ "cfg-if 1.0.0",
+ "convert_case 0.6.0",
+ "dashmap",
+ "downcast",
+ "faster-hex 0.6.1",
+ "futures",
+ "js-sys",
+ "nw-sys",
+ "pad",
+ "pyrin-addresses",
+ "pyrin-bip32",
+ "pyrin-consensus-core",
+ "pyrin-core",
+ "pyrin-daemon",
+ "pyrin-metrics-core",
+ "pyrin-rpc-core",
+ "pyrin-utils",
+ "pyrin-wallet-core",
+ "pyrin-wallet-keys",
+ "pyrin-wrpc-client",
+ "regex",
+ "separator",
+ "serde",
+ "serde_json",
+ "textwrap 0.16.1",
+ "thiserror",
+ "tokio",
+ "wasm-bindgen",
+ "web-sys",
+ "workflow-core",
+ "workflow-dom",
+ "workflow-log",
+ "workflow-node",
+ "workflow-nw",
+ "workflow-store",
+ "workflow-terminal",
+ "workflow-wasm",
+]
+
+[[package]]
+name = "pyrin-connectionmanager"
+version = "0.14.5"
+dependencies = [
+ "duration-string",
+ "futures-util",
+ "itertools 0.11.0",
+ "log",
+ "parking_lot",
+ "pyrin-addressmanager",
+ "pyrin-core",
+ "pyrin-p2p-lib",
+ "pyrin-utils",
+ "rand 0.8.5",
+ "tokio",
+]
+
+[[package]]
+name = "pyrin-consensus"
+version = "0.14.5"
+dependencies = [
+ "arc-swap",
+ "async-channel 2.2.1",
+ "bincode",
+ "criterion",
+ "crossbeam-channel",
+ "faster-hex 0.6.1",
+ "flate2",
+ "futures-util",
+ "indexmap 2.2.6",
+ "itertools 0.11.0",
+ "log",
+ "once_cell",
+ "parking_lot",
+ "pyrin-addresses",
+ "pyrin-consensus-core",
+ "pyrin-consensus-notify",
+ "pyrin-consensusmanager",
+ "pyrin-core",
+ "pyrin-database",
+ "pyrin-hashes",
+ "pyrin-math",
+ "pyrin-merkle",
+ "pyrin-muhash",
+ "pyrin-notify",
+ "pyrin-pow",
+ "pyrin-txscript",
+ "pyrin-txscript-errors",
+ "pyrin-utils",
+ "rand 0.8.5",
+ "rand_distr 0.4.3",
+ "rayon",
+ "rocksdb",
+ "secp256k1",
+ "serde",
+ "serde_json",
+ "smallvec",
+ "thiserror",
+ "tokio",
+]
+
+[[package]]
+name = "pyrin-consensus-client"
+version = "0.14.5"
+dependencies = [
+ "ahash 0.8.11",
+ "cfg-if 1.0.0",
+ "faster-hex 0.6.1",
+ "hex",
+ "itertools 0.11.0",
+ "js-sys",
+ "pyrin-addresses",
+ "pyrin-consensus-core",
+ "pyrin-hashes",
+ "pyrin-math",
+ "pyrin-muhash",
+ "pyrin-txscript",
+ "pyrin-utils",
+ "pyrin-wasm-core",
+ "rand 0.8.5",
+ "secp256k1",
+ "serde",
+ "serde-wasm-bindgen",
+ "serde_json",
+ "thiserror",
+ "wasm-bindgen",
+ "workflow-log",
+ "workflow-wasm",
+]
+
+[[package]]
+name = "pyrin-consensus-core"
+version = "0.14.5"
+dependencies = [
+ "async-trait",
+ "bincode",
+ "borsh",
+ "cfg-if 1.0.0",
+ "criterion",
+ "faster-hex 0.6.1",
+ "futures-util",
+ "getrandom 0.2.14",
+ "itertools 0.11.0",
+ "js-sys",
+ "pyo3",
+ "pyrin-addresses",
+ "pyrin-core",
+ "pyrin-hashes",
+ "pyrin-math",
+ "pyrin-merkle",
+ "pyrin-muhash",
+ "pyrin-txscript-errors",
+ "pyrin-utils",
+ "rand 0.8.5",
+ "secp256k1",
+ "serde",
+ "serde-wasm-bindgen",
+ "serde_json",
+ "smallvec",
+ "thiserror",
+ "wasm-bindgen",
+ "wasm-bindgen-test",
+ "web-sys",
+ "workflow-core",
+ "workflow-log",
+ "workflow-wasm",
+]
+
+[[package]]
+name = "pyrin-consensus-notify"
+version = "0.14.5"
+dependencies = [
+ "async-channel 2.2.1",
+ "cfg-if 1.0.0",
+ "derive_more",
+ "futures",
+ "log",
+ "paste",
+ "pyrin-consensus-core",
+ "pyrin-core",
+ "pyrin-hashes",
+ "pyrin-notify",
+ "pyrin-utils",
+ "thiserror",
+ "triggered",
+]
+
+[[package]]
+name = "pyrin-consensus-wasm"
+version = "0.14.5"
+dependencies = [
+ "cfg-if 1.0.0",
+ "faster-hex 0.6.1",
+ "js-sys",
+ "pyrin-addresses",
+ "pyrin-consensus-client",
+ "pyrin-consensus-core",
+ "pyrin-hashes",
+ "pyrin-txscript",
+ "pyrin-utils",
+ "rand 0.8.5",
+ "secp256k1",
+ "serde",
+ "serde-wasm-bindgen",
+ "serde_json",
+ "thiserror",
+ "wasm-bindgen",
+ "workflow-log",
+ "workflow-wasm",
+]
+
+[[package]]
+name = "pyrin-consensusmanager"
+version = "0.14.5"
+dependencies = [
+ "duration-string",
+ "futures",
+ "futures-util",
+ "itertools 0.11.0",
+ "log",
+ "parking_lot",
+ "pyrin-consensus-core",
+ "pyrin-consensus-notify",
+ "pyrin-core",
+ "pyrin-utils",
+ "rand 0.8.5",
+ "tokio",
+]
+
+[[package]]
+name = "pyrin-core"
+version = "0.14.5"
+dependencies = [
+ "cfg-if 1.0.0",
+ "ctrlc",
+ "futures-util",
+ "intertrait",
+ "log",
+ "log4rs",
+ "num_cpus",
+ "thiserror",
+ "tokio",
+ "triggered",
+ "wasm-bindgen",
+ "workflow-log",
+]
+
+[[package]]
+name = "pyrin-daemon"
+version = "0.14.5"
+dependencies = [
+ "async-trait",
+ "borsh",
+ "cfg-if 1.0.0",
+ "downcast-rs",
+ "futures",
+ "nw-sys",
+ "pyrin-addresses",
+ "pyrin-consensus-core",
+ "pyrin-wallet-core",
+ "serde",
+ "thiserror",
+ "workflow-core",
+ "workflow-log",
+ "workflow-node",
+ "workflow-nw",
+ "workflow-store",
+]
+
+[[package]]
+name = "pyrin-database"
+version = "0.14.5"
+dependencies = [
+ "bincode",
+ "enum-primitive-derive",
+ "faster-hex 0.6.1",
+ "indexmap 2.2.6",
+ "itertools 0.11.0",
+ "num-traits",
+ "num_cpus",
+ "parking_lot",
+ "pyrin-hashes",
+ "pyrin-utils",
+ "rand 0.8.5",
+ "rocksdb",
+ "serde",
+ "smallvec",
+ "tempfile",
+ "thiserror",
+]
+
+[[package]]
+name = "pyrin-grpc-client"
+version = "0.14.5"
+dependencies = [
+ "async-channel 2.2.1",
+ "async-stream",
+ "async-trait",
+ "faster-hex 0.6.1",
+ "futures",
+ "futures-util",
+ "h2",
+ "itertools 0.11.0",
+ "log",
+ "parking_lot",
+ "paste",
+ "prost",
+ "pyrin-core",
+ "pyrin-grpc-core",
+ "pyrin-notify",
+ "pyrin-rpc-core",
+ "pyrin-utils",
+ "pyrin-utils-tower",
+ "rand 0.8.5",
+ "regex",
+ "thiserror",
+ "tokio",
+ "tokio-stream",
+ "tonic",
+ "triggered",
+]
+
+[[package]]
+name = "pyrin-grpc-core"
+version = "0.14.5"
+dependencies = [
+ "async-channel 2.2.1",
+ "async-stream",
+ "async-trait",
+ "faster-hex 0.6.1",
+ "futures",
+ "h2",
+ "log",
+ "paste",
+ "prost",
+ "pyrin-consensus-core",
+ "pyrin-core",
+ "pyrin-muhash",
+ "pyrin-notify",
+ "pyrin-rpc-core",
+ "pyrin-utils",
+ "rand 0.8.5",
+ "regex",
+ "thiserror",
+ "tokio",
+ "tokio-stream",
+ "tonic",
+ "tonic-build",
+ "triggered",
+ "workflow-core",
+]
+
+[[package]]
+name = "pyrin-grpc-server"
+version = "0.14.5"
+dependencies = [
+ "async-channel 2.2.1",
+ "async-stream",
+ "async-trait",
+ "faster-hex 0.6.1",
+ "futures",
+ "h2",
+ "itertools 0.11.0",
+ "log",
+ "once_cell",
+ "parking_lot",
+ "paste",
+ "prost",
+ "pyrin-consensus-core",
+ "pyrin-core",
+ "pyrin-grpc-client",
+ "pyrin-grpc-core",
+ "pyrin-notify",
+ "pyrin-rpc-core",
+ "pyrin-rpc-macros",
+ "pyrin-rpc-service",
+ "pyrin-utils",
+ "pyrin-utils-tower",
+ "rand 0.8.5",
+ "thiserror",
+ "tokio",
+ "tokio-stream",
+ "tonic",
+ "triggered",
+ "uuid 1.6.1",
+]
+
+[[package]]
+name = "pyrin-hashes"
+version = "0.14.5"
+dependencies = [
+ "blake3",
+ "borsh",
+ "cc",
+ "criterion",
+ "faster-hex 0.6.1",
+ "js-sys",
+ "keccak",
+ "once_cell",
+ "pyo3",
+ "pyrin-math",
+ "pyrin-utils",
+ "rand 0.8.5",
+ "serde",
+ "sha2",
+ "sha3",
+ "wasm-bindgen",
+ "workflow-wasm",
+]
+
+[[package]]
+name = "pyrin-index-core"
+version = "0.14.5"
+dependencies = [
+ "async-channel 2.2.1",
+ "async-trait",
+ "derive_more",
+ "futures",
+ "log",
+ "paste",
+ "pyrin-consensus-core",
+ "pyrin-hashes",
+ "pyrin-notify",
+ "pyrin-utils",
+ "serde",
+ "thiserror",
+ "triggered",
+]
+
+[[package]]
+name = "pyrin-index-processor"
+version = "0.14.5"
+dependencies = [
+ "async-channel 2.2.1",
+ "async-trait",
+ "derive_more",
+ "futures",
+ "log",
+ "parking_lot",
+ "paste",
+ "pyrin-consensus",
+ "pyrin-consensus-core",
+ "pyrin-consensus-notify",
+ "pyrin-consensusmanager",
+ "pyrin-core",
+ "pyrin-database",
+ "pyrin-hashes",
+ "pyrin-index-core",
+ "pyrin-notify",
+ "pyrin-utils",
+ "pyrin-utxoindex",
+ "rand 0.8.5",
+ "thiserror",
+ "tokio",
+ "triggered",
+]
+
+[[package]]
+name = "pyrin-math"
+version = "0.14.5"
+dependencies = [
+ "borsh",
+ "criterion",
+ "faster-hex 0.6.1",
+ "js-sys",
+ "malachite-base",
+ "malachite-nz",
+ "pyo3",
+ "pyrin-utils",
+ "rand_chacha 0.3.1",
+ "serde",
+ "serde-wasm-bindgen",
+ "thiserror",
+ "wasm-bindgen",
+ "workflow-core",
+ "workflow-log",
+ "workflow-wasm",
+]
+
+[[package]]
+name = "pyrin-merkle"
+version = "0.14.5"
+dependencies = [
+ "pyrin-hashes",
+]
+
+[[package]]
+name = "pyrin-metrics-core"
+version = "0.14.5"
+dependencies = [
+ "async-trait",
+ "borsh",
+ "futures",
+ "pyrin-core",
+ "pyrin-rpc-core",
+ "separator",
+ "serde",
+ "thiserror",
+ "workflow-core",
+ "workflow-log",
+]
+
+[[package]]
+name = "pyrin-mining"
+version = "0.14.5"
+dependencies = [
+ "criterion",
+ "futures-util",
+ "itertools 0.11.0",
+ "log",
+ "parking_lot",
+ "pyrin-addresses",
+ "pyrin-consensus-core",
+ "pyrin-consensusmanager",
+ "pyrin-core",
+ "pyrin-hashes",
+ "pyrin-mining-errors",
+ "pyrin-muhash",
+ "pyrin-txscript",
+ "pyrin-utils",
+ "rand 0.8.5",
+ "secp256k1",
+ "serde",
+ "smallvec",
+ "thiserror",
+ "tokio",
+]
+
+[[package]]
+name = "pyrin-mining-errors"
+version = "0.14.5"
+dependencies = [
+ "pyrin-consensus-core",
+ "thiserror",
+]
+
+[[package]]
+name = "pyrin-muhash"
+version = "0.14.5"
+dependencies = [
+ "blake2b_simd",
+ "borsh",
+ "criterion",
+ "faster-hex 0.6.1",
+ "hex",
+ "keccak",
+ "once_cell",
+ "pyo3",
+ "pyrin-hashes",
+ "pyrin-math",
+ "pyrin-utils",
+ "rand 0.8.5",
+ "rand_chacha 0.3.1",
+ "rayon",
+ "serde",
+ "sha2",
+ "sha3",
+ "wasm-bindgen",
+ "workflow-wasm",
+]
+
+[[package]]
+name = "pyrin-notify"
+version = "0.14.5"
+dependencies = [
+ "async-channel 2.2.1",
+ "async-trait",
+ "borsh",
+ "criterion",
+ "derive_more",
+ "futures",
+ "futures-util",
+ "indexmap 2.2.6",
+ "itertools 0.11.0",
+ "log",
+ "parking_lot",
+ "paste",
+ "pyrin-addresses",
+ "pyrin-alloc",
+ "pyrin-consensus-core",
+ "pyrin-core",
+ "pyrin-hashes",
+ "pyrin-math",
+ "pyrin-txscript",
+ "pyrin-txscript-errors",
+ "pyrin-utils",
+ "rand 0.8.5",
+ "serde",
+ "thiserror",
+ "tokio",
+ "triggered",
+ "workflow-core",
+ "workflow-log",
+ "workflow-perf-monitor",
+]
+
+[[package]]
+name = "pyrin-p2p-flows"
+version = "0.14.5"
+dependencies = [
+ "async-trait",
+ "chrono",
+ "futures",
+ "indexmap 2.2.6",
+ "itertools 0.11.0",
+ "log",
+ "parking_lot",
+ "pyrin-addressmanager",
+ "pyrin-connectionmanager",
+ "pyrin-consensus-core",
+ "pyrin-consensus-notify",
+ "pyrin-consensusmanager",
+ "pyrin-core",
+ "pyrin-hashes",
+ "pyrin-mining",
+ "pyrin-muhash",
+ "pyrin-notify",
+ "pyrin-p2p-lib",
+ "pyrin-utils",
+ "pyrin-utils-tower",
+ "rand 0.8.5",
+ "thiserror",
+ "tokio",
+ "tokio-stream",
+ "uuid 1.6.1",
+]
+
+[[package]]
+name = "pyrin-p2p-lib"
+version = "0.14.5"
+dependencies = [
+ "borsh",
+ "ctrlc",
+ "futures",
+ "h2",
+ "hex",
+ "itertools 0.11.0",
+ "log",
+ "parking_lot",
+ "prost",
+ "pyrin-consensus-core",
+ "pyrin-core",
+ "pyrin-hashes",
+ "pyrin-math",
+ "pyrin-mining-errors",
+ "pyrin-muhash",
+ "pyrin-utils",
+ "pyrin-utils-tower",
+ "rand 0.8.5",
+ "seqlock",
+ "serde",
+ "thiserror",
+ "tokio",
+ "tokio-stream",
+ "tonic",
+ "tonic-build",
+ "uuid 1.6.1",
+]
+
+[[package]]
+name = "pyrin-perf-monitor"
+version = "0.14.5"
+dependencies = [
+ "log",
+ "portable-atomic",
+ "pyrin-core",
+ "thiserror",
+ "tokio",
+ "workflow-perf-monitor",
+]
+
+[[package]]
+name = "pyrin-pow"
+version = "0.14.5"
+dependencies = [
+ "criterion",
+ "js-sys",
+ "num",
+ "pyrin-consensus-client",
+ "pyrin-consensus-core",
+ "pyrin-hashes",
+ "pyrin-math",
+ "pyrin-utils",
+ "wasm-bindgen",
+ "workflow-wasm",
+]
+
+[[package]]
+name = "pyrin-resolver"
+version = "0.14.5"
+dependencies = [
+ "ahash 0.8.11",
+ "axum 0.7.5",
+ "cfg-if 1.0.0",
+ "clap 4.5.4",
+ "console",
+ "convert_case 0.6.0",
+ "futures",
+ "mime",
+ "pyrin-consensus-core",
+ "pyrin-rpc-core",
+ "pyrin-utils",
+ "pyrin-wrpc-client",
+ "serde",
+ "serde_json",
+ "thiserror",
+ "tokio",
+ "toml 0.8.12",
+ "tower",
+ "tower-http 0.5.2",
+ "tracing-subscriber",
+ "workflow-core",
+ "workflow-http",
+ "workflow-log",
+ "xxhash-rust",
+]
+
+[[package]]
+name = "pyrin-rpc-core"
+version = "0.14.5"
+dependencies = [
+ "async-channel 2.2.1",
+ "async-trait",
+ "borsh",
+ "cfg-if 1.0.0",
+ "derive_more",
+ "downcast",
+ "faster-hex 0.6.1",
+ "hex",
+ "js-sys",
+ "log",
+ "paste",
+ "pyo3",
+ "pyrin-addresses",
+ "pyrin-consensus-client",
+ "pyrin-consensus-core",
+ "pyrin-consensus-notify",
+ "pyrin-consensus-wasm",
+ "pyrin-core",
+ "pyrin-hashes",
+ "pyrin-index-core",
+ "pyrin-math",
+ "pyrin-mining-errors",
+ "pyrin-notify",
+ "pyrin-rpc-macros",
+ "pyrin-txscript",
+ "pyrin-utils",
+ "serde",
+ "serde-wasm-bindgen",
+ "serde_json",
+ "smallvec",
+ "thiserror",
+ "uuid 1.6.1",
+ "wasm-bindgen",
+ "workflow-core",
+ "workflow-wasm",
+]
+
+[[package]]
+name = "pyrin-rpc-macros"
+version = "0.14.5"
+dependencies = [
+ "convert_case 0.6.0",
+ "proc-macro-error",
+ "proc-macro2",
+ "quote",
+ "regex",
+ "syn 1.0.109",
+]
+
+[[package]]
+name = "pyrin-rpc-service"
+version = "0.14.5"
+dependencies = [
+ "async-trait",
+ "log",
+ "pyrin-addresses",
+ "pyrin-consensus-core",
+ "pyrin-consensus-notify",
+ "pyrin-consensusmanager",
+ "pyrin-core",
+ "pyrin-hashes",
+ "pyrin-index-core",
+ "pyrin-math",
+ "pyrin-mining",
+ "pyrin-notify",
+ "pyrin-p2p-flows",
+ "pyrin-p2p-lib",
+ "pyrin-perf-monitor",
+ "pyrin-rpc-core",
+ "pyrin-txscript",
+ "pyrin-utils",
+ "pyrin-utils-tower",
+ "pyrin-utxoindex",
+ "tokio",
+ "triggered",
+ "workflow-rpc",
+]
+
+[[package]]
 name = "pyrin-sdk"
 version = "0.1.9"
 dependencies = [
  "futures",
- "kaspa-addresses",
- "kaspa-bip32",
- "kaspa-consensus-core",
- "kaspa-muhash",
- "kaspa-notify",
- "kaspa-rpc-core",
- "kaspa-wallet-core",
  "pyo3",
  "pyo3-asyncio",
+ "pyrin-addresses",
+ "pyrin-bip32",
+ "pyrin-consensus-core",
+ "pyrin-muhash",
+ "pyrin-notify",
+ "pyrin-rpc-core",
+ "pyrin-wallet-core",
  "tokio",
  "workflow-core",
+]
+
+[[package]]
+name = "pyrin-testing-integration"
+version = "0.14.5"
+dependencies = [
+ "async-channel 2.2.1",
+ "async-trait",
+ "bincode",
+ "chrono",
+ "clap 4.5.4",
+ "criterion",
+ "crossbeam-channel",
+ "dhat",
+ "faster-hex 0.6.1",
+ "flate2",
+ "futures-util",
+ "indexmap 2.2.6",
+ "itertools 0.11.0",
+ "log",
+ "parking_lot",
+ "pyrin",
+ "pyrin-addresses",
+ "pyrin-alloc",
+ "pyrin-bip32",
+ "pyrin-consensus",
+ "pyrin-consensus-core",
+ "pyrin-consensus-notify",
+ "pyrin-consensusmanager",
+ "pyrin-core",
+ "pyrin-database",
+ "pyrin-grpc-client",
+ "pyrin-grpc-core",
+ "pyrin-grpc-server",
+ "pyrin-hashes",
+ "pyrin-index-processor",
+ "pyrin-math",
+ "pyrin-merkle",
+ "pyrin-muhash",
+ "pyrin-notify",
+ "pyrin-pow",
+ "pyrin-rpc-core",
+ "pyrin-rpc-service",
+ "pyrin-txscript",
+ "pyrin-txscript-errors",
+ "pyrin-utils",
+ "pyrin-utxoindex",
+ "pyrin-wrpc-server",
+ "rand 0.8.5",
+ "rand_distr 0.4.3",
+ "rayon",
+ "rocksdb",
+ "secp256k1",
+ "serde",
+ "serde_json",
+ "smallvec",
+ "tempfile",
+ "thiserror",
+ "tokio",
+ "workflow-perf-monitor",
+]
+
+[[package]]
+name = "pyrin-txscript"
+version = "0.14.5"
+dependencies = [
+ "blake3",
+ "borsh",
+ "criterion",
+ "hex",
+ "indexmap 2.2.6",
+ "itertools 0.11.0",
+ "log",
+ "parking_lot",
+ "pyo3",
+ "pyrin-addresses",
+ "pyrin-consensus-core",
+ "pyrin-hashes",
+ "pyrin-txscript-errors",
+ "rand 0.8.5",
+ "secp256k1",
+ "serde",
+ "serde_json",
+ "sha2",
+ "smallvec",
+ "thiserror",
+ "wasm-bindgen",
+]
+
+[[package]]
+name = "pyrin-txscript-errors"
+version = "0.14.5"
+dependencies = [
+ "secp256k1",
+ "thiserror",
+]
+
+[[package]]
+name = "pyrin-utils"
+version = "0.14.5"
+dependencies = [
+ "async-channel 2.2.1",
+ "async-trait",
+ "bincode",
+ "borsh",
+ "cfg-if 1.0.0",
+ "criterion",
+ "event-listener 2.5.3",
+ "faster-hex 0.6.1",
+ "futures-util",
+ "ipnet",
+ "itertools 0.11.0",
+ "log",
+ "parking_lot",
+ "pyo3",
+ "rand 0.8.5",
+ "rlimit",
+ "serde",
+ "serde_json",
+ "smallvec",
+ "thiserror",
+ "tokio",
+ "triggered",
+ "uuid 1.6.1",
+ "wasm-bindgen",
+]
+
+[[package]]
+name = "pyrin-utils-tower"
+version = "0.14.5"
+dependencies = [
+ "cfg-if 1.0.0",
+ "futures",
+ "hyper 0.14.28",
+ "log",
+ "pin-project-lite",
+ "tokio",
+ "tower",
+ "tower-http 0.4.4",
+]
+
+[[package]]
+name = "pyrin-utxoindex"
+version = "0.14.5"
+dependencies = [
+ "futures",
+ "log",
+ "parking_lot",
+ "pyrin-consensus",
+ "pyrin-consensus-core",
+ "pyrin-consensusmanager",
+ "pyrin-core",
+ "pyrin-database",
+ "pyrin-hashes",
+ "pyrin-index-core",
+ "pyrin-utils",
+ "rand 0.8.5",
+ "rocksdb",
+ "serde",
+ "thiserror",
+]
+
+[[package]]
+name = "pyrin-wallet"
+version = "0.14.5"
+dependencies = [
+ "async-std",
+ "async-trait",
+ "pyrin-cli",
+ "tokio",
+ "workflow-log",
+ "workflow-terminal",
+]
+
+[[package]]
+name = "pyrin-wallet-cli-wasm"
+version = "0.14.5"
+dependencies = [
+ "async-trait",
+ "js-sys",
+ "pyrin-cli",
+ "wasm-bindgen",
+ "wasm-bindgen-futures",
+ "workflow-log",
+ "workflow-terminal",
+ "workflow-wasm",
+]
+
+[[package]]
+name = "pyrin-wallet-core"
+version = "0.14.5"
+dependencies = [
+ "aes",
+ "ahash 0.8.11",
+ "argon2",
+ "async-channel 2.2.1",
+ "async-std",
+ "async-trait",
+ "base64 0.21.7",
+ "borsh",
+ "cfb-mode",
+ "cfg-if 1.0.0",
+ "chacha20poly1305",
+ "convert_case 0.6.0",
+ "crypto_box",
+ "dashmap",
+ "derivative",
+ "downcast",
+ "evpkdf",
+ "faster-hex 0.6.1",
+ "fixedstr",
+ "futures",
+ "heapless",
+ "hex-literal",
+ "hmac",
+ "home",
+ "indexed_db_futures",
+ "itertools 0.11.0",
+ "js-sys",
+ "md-5",
+ "pad",
+ "pbkdf2",
+ "pyrin-addresses",
+ "pyrin-bip32",
+ "pyrin-consensus-client",
+ "pyrin-consensus-core",
+ "pyrin-consensus-wasm",
+ "pyrin-core",
+ "pyrin-hashes",
+ "pyrin-metrics-core",
+ "pyrin-notify",
+ "pyrin-rpc-core",
+ "pyrin-txscript",
+ "pyrin-txscript-errors",
+ "pyrin-utils",
+ "pyrin-wallet-keys",
+ "pyrin-wallet-macros",
+ "pyrin-wasm-core",
+ "pyrin-wrpc-client",
+ "pyrin-wrpc-wasm",
+ "rand 0.8.5",
+ "regex",
+ "ripemd",
+ "secp256k1",
+ "separator",
+ "serde",
+ "serde-wasm-bindgen",
+ "serde_json",
+ "serde_repr",
+ "sha1",
+ "sha2",
+ "slugify-rs",
+ "sorted-insert",
+ "thiserror",
+ "tokio",
+ "wasm-bindgen",
+ "wasm-bindgen-futures",
+ "web-sys",
+ "workflow-core",
+ "workflow-log",
+ "workflow-node",
+ "workflow-rpc",
+ "workflow-store",
+ "workflow-wasm",
+ "xxhash-rust",
+ "zeroize",
+]
+
+[[package]]
+name = "pyrin-wallet-keys"
+version = "0.14.5"
+dependencies = [
+ "async-trait",
+ "borsh",
+ "downcast",
+ "faster-hex 0.6.1",
+ "hmac",
+ "js-sys",
+ "pyrin-addresses",
+ "pyrin-bip32",
+ "pyrin-consensus-core",
+ "pyrin-txscript",
+ "pyrin-txscript-errors",
+ "pyrin-utils",
+ "pyrin-wasm-core",
+ "rand 0.8.5",
+ "ripemd",
+ "secp256k1",
+ "serde",
+ "serde-wasm-bindgen",
+ "serde_json",
+ "sha2",
+ "thiserror",
+ "tokio",
+ "wasm-bindgen",
+ "wasm-bindgen-futures",
+ "workflow-core",
+ "workflow-wasm",
+ "zeroize",
+]
+
+[[package]]
+name = "pyrin-wallet-macros"
+version = "0.14.5"
+dependencies = [
+ "convert_case 0.5.0",
+ "proc-macro-error",
+ "proc-macro2",
+ "quote",
+ "regex",
+ "syn 1.0.109",
+ "xxhash-rust",
+]
+
+[[package]]
+name = "pyrin-wasm"
+version = "0.14.5"
+dependencies = [
+ "cfg-if 1.0.0",
+ "js-sys",
+ "num",
+ "pyrin-addresses",
+ "pyrin-consensus-core",
+ "pyrin-consensus-wasm",
+ "pyrin-core",
+ "pyrin-math",
+ "pyrin-pow",
+ "pyrin-rpc-core",
+ "pyrin-utils",
+ "pyrin-wallet-core",
+ "pyrin-wallet-keys",
+ "pyrin-wasm-core",
+ "pyrin-wrpc-client",
+ "pyrin-wrpc-wasm",
+ "wasm-bindgen",
+ "workflow-core",
+ "workflow-log",
+ "workflow-wasm",
+]
+
+[[package]]
+name = "pyrin-wasm-core"
+version = "0.14.5"
+dependencies = [
+ "faster-hex 0.6.1",
+ "js-sys",
+ "wasm-bindgen",
+]
+
+[[package]]
+name = "pyrin-wrpc-client"
+version = "0.14.5"
+dependencies = [
+ "async-std",
+ "async-trait",
+ "borsh",
+ "cfg-if 1.0.0",
+ "futures",
+ "js-sys",
+ "paste",
+ "pyrin-addresses",
+ "pyrin-consensus-core",
+ "pyrin-consensus-wasm",
+ "pyrin-notify",
+ "pyrin-rpc-core",
+ "pyrin-rpc-macros",
+ "rand 0.8.5",
+ "regex",
+ "serde",
+ "serde-wasm-bindgen",
+ "serde_json",
+ "thiserror",
+ "toml 0.8.12",
+ "wasm-bindgen",
+ "wasm-bindgen-futures",
+ "workflow-core",
+ "workflow-dom",
+ "workflow-http",
+ "workflow-log",
+ "workflow-rpc",
+ "workflow-wasm",
+]
+
+[[package]]
+name = "pyrin-wrpc-example-subscriber"
+version = "0.14.5"
+dependencies = [
+ "ctrlc",
+ "futures",
+ "pyrin-consensus-core",
+ "pyrin-notify",
+ "pyrin-rpc-core",
+ "pyrin-wrpc-client",
+ "tokio",
+ "workflow-core",
+ "workflow-log",
+]
+
+[[package]]
+name = "pyrin-wrpc-proxy"
+version = "0.14.5"
+dependencies = [
+ "async-trait",
+ "clap 4.5.4",
+ "num_cpus",
+ "pyrin-consensus-core",
+ "pyrin-grpc-client",
+ "pyrin-rpc-core",
+ "pyrin-rpc-macros",
+ "pyrin-wrpc-server",
+ "thiserror",
+ "tokio",
+ "workflow-core",
+ "workflow-log",
+ "workflow-rpc",
+]
+
+[[package]]
+name = "pyrin-wrpc-server"
+version = "0.14.5"
+dependencies = [
+ "async-trait",
+ "borsh",
+ "futures",
+ "log",
+ "num_cpus",
+ "openssl",
+ "paste",
+ "pyrin-consensus-core",
+ "pyrin-core",
+ "pyrin-grpc-client",
+ "pyrin-notify",
+ "pyrin-rpc-core",
+ "pyrin-rpc-macros",
+ "pyrin-rpc-service",
+ "pyrin-utils",
+ "serde",
+ "thiserror",
+ "tokio",
+ "workflow-core",
+ "workflow-log",
+ "workflow-rpc",
+]
+
+[[package]]
+name = "pyrin-wrpc-wasm"
+version = "0.14.5"
+dependencies = [
+ "ahash 0.8.11",
+ "async-std",
+ "cfg-if 1.0.0",
+ "futures",
+ "js-sys",
+ "pyrin-addresses",
+ "pyrin-consensus-client",
+ "pyrin-consensus-core",
+ "pyrin-consensus-wasm",
+ "pyrin-notify",
+ "pyrin-rpc-core",
+ "pyrin-rpc-macros",
+ "pyrin-wasm-core",
+ "pyrin-wrpc-client",
+ "serde",
+ "serde-wasm-bindgen",
+ "serde_json",
+ "wasm-bindgen",
+ "wasm-bindgen-futures",
+ "workflow-core",
+ "workflow-log",
+ "workflow-rpc",
+ "workflow-wasm",
 ]
 
 [[package]]
@@ -5353,16 +5297,16 @@ dependencies = [
  "criterion",
  "faster-hex 0.6.1",
  "itertools 0.11.0",
- "kaspa-addresses",
- "kaspa-consensus-core",
- "kaspa-core",
- "kaspa-grpc-client",
- "kaspa-notify",
- "kaspa-rpc-core",
- "kaspa-txscript",
- "kaspa-utils",
  "log",
  "parking_lot",
+ "pyrin-addresses",
+ "pyrin-consensus-core",
+ "pyrin-core",
+ "pyrin-grpc-client",
+ "pyrin-notify",
+ "pyrin-rpc-core",
+ "pyrin-txscript",
+ "pyrin-utils",
  "rayon",
  "secp256k1",
  "tokio",
@@ -5800,17 +5744,17 @@ dependencies = [
  "futures-util",
  "indexmap 2.2.6",
  "itertools 0.11.0",
- "kaspa-alloc",
- "kaspa-consensus",
- "kaspa-consensus-core",
- "kaspa-consensus-notify",
- "kaspa-core",
- "kaspa-database",
- "kaspa-hashes",
- "kaspa-perf-monitor",
- "kaspa-utils",
  "log",
  "num_cpus",
+ "pyrin-alloc",
+ "pyrin-consensus",
+ "pyrin-consensus-core",
+ "pyrin-consensus-notify",
+ "pyrin-core",
+ "pyrin-database",
+ "pyrin-hashes",
+ "pyrin-perf-monitor",
+ "pyrin-utils",
  "rand 0.8.5",
  "rand_distr 0.4.3",
  "rayon",

@@ -1,6 +1,6 @@
 [package]
-name = "kaspa-addressmanager"
-description = "Kaspa address manager"
+name = "pyrin-addressmanager"
+description = "Pyrin address manager"
 rust-version.workspace = true
 version.workspace = true
 edition.workspace = true
@@ -13,10 +13,10 @@ repository.workspace = true
 borsh.workspace = true
 igd-next.workspace = true
 itertools.workspace = true
-kaspa-consensus-core.workspace = true
-kaspa-core.workspace = true
-kaspa-database.workspace = true
-kaspa-utils.workspace = true
+pyrin-consensus-core.workspace = true
+pyrin-core.workspace = true
+pyrin-database.workspace = true
+pyrin-utils.workspace = true
 local-ip-address.workspace = true
 log.workspace = true
 parking_lot.workspace = true

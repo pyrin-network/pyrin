@@ -1,15 +1,15 @@
 // @ts-ignore
 globalThis.WebSocket = require('websocket').w3cwebsocket; // W3C WebSocket module shim
 
-const kaspa = require('../../../../nodejs/kaspa');
+const pyrin = require('../../../../nodejs/pyrin');
 const { parseArgs } = require("../utils");
 const {
     Resolver,
     Encoding,
     RpcClient,
-} = kaspa;
+} = pyrin;
 
-kaspa.initConsolePanicHook();
+pyrin.initConsolePanicHook();
 
 const {
     networkId,

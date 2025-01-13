@@ -16,18 +16,18 @@ use crossbeam_channel::{
 use itertools::Itertools;
 use tokio::sync::oneshot;
 
-use kaspa_consensus_core::{acceptance_data::AcceptanceData, api::{BlockValidationFutures, ConsensusApi, ConsensusStats, stats::BlockCount}, block::{Block, BlockTemplate, TemplateBuildMode, TemplateTransactionSelector, VirtualStateApproxId}, blockhash::BlockHashExtensions, BlockHashSet, blockstatus::BlockStatus, BlueWorkType, ChainPath, coinbase::MinerData, daa_score_timestamp::DaaScoreTimestamp, errors::{
+use pyrin_consensus_core::{acceptance_data::AcceptanceData, api::{BlockValidationFutures, ConsensusApi, ConsensusStats, stats::BlockCount}, block::{Block, BlockTemplate, TemplateBuildMode, TemplateTransactionSelector, VirtualStateApproxId}, blockhash::BlockHashExtensions, BlockHashSet, blockstatus::BlockStatus, BlueWorkType, ChainPath, coinbase::MinerData, daa_score_timestamp::DaaScoreTimestamp, errors::{
     coinbase::CoinbaseResult,
     consensus::{ConsensusError, ConsensusResult},
     tx::TxResult,
 }, errors::{difficulty::DifficultyError, pruning::PruningImportError}, header::Header, muhash::MuHashExtensions, network::NetworkType, pruning::{PruningPointProof, PruningPointsList, PruningPointTrustedData}, trusted::{ExternalGhostdagData, TrustedBlock}, tx::{MutableTransaction, Transaction, TransactionOutpoint, UtxoEntry}};
-use kaspa_consensus_notify::root::ConsensusNotificationRoot;
-use kaspa_consensusmanager::{SessionLock, SessionReadGuard};
-use kaspa_core::info;
-use kaspa_database::prelude::StoreResultExtensions;
-use kaspa_hashes::Hash;
-use kaspa_muhash::MuHash;
-use kaspa_txscript::caches::TxScriptCacheCounters;
+use pyrin_consensus_notify::root::ConsensusNotificationRoot;
+use pyrin_consensusmanager::{SessionLock, SessionReadGuard};
+use pyrin_core::info;
+use pyrin_database::prelude::StoreResultExtensions;
+use pyrin_hashes::Hash;
+use pyrin_muhash::MuHash;
+use pyrin_txscript::caches::TxScriptCacheCounters;
 
 use crate::{
     config::Config,
@@ -542,8 +542,8 @@ impl ConsensusApi for Consensus {
         // Part 1: Add samples from pruning point headers:
         if self.config.net.network_type == NetworkType::Mainnet {
             // For mainnet, we add extra data (16 pp headers) from before checkpoint genesis.
-            // Source: https://github.com/kaspagang/kaspad-py-explorer/blob/main/src/tx_timestamp_estimation.ipynb
-            // For context see also: https://github.com/kaspagang/kaspad-py-explorer/blob/main/src/genesis_proof.ipynb
+            // Source: https://github.com/pyringang/pyrind-py-explorer/blob/main/src/tx_timestamp_estimation.ipynb
+            // For context see also: https://github.com/pyringang/pyrind-py-explorer/blob/main/src/genesis_proof.ipynb
             const POINTS: &[DaaScoreTimestamp] = &[
                 DaaScoreTimestamp { daa_score: 0, timestamp: 1636298787842 },
                 DaaScoreTimestamp { daa_score: 87133, timestamp: 1636386662010 },

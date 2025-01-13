@@ -1,11 +1,11 @@
 use std::{cmp::min, ops::Deref, sync::Arc};
 
 use itertools::Itertools;
-use kaspa_consensus_core::errors::sync::{SyncManagerError, SyncManagerResult};
-use kaspa_database::prelude::StoreResultExtensions;
-use kaspa_hashes::Hash;
-use kaspa_math::uint::malachite_base::num::arithmetic::traits::CeilingLogBase2;
-use kaspa_utils::option::OptionExtensions;
+use pyrin_consensus_core::errors::sync::{SyncManagerError, SyncManagerResult};
+use pyrin_database::prelude::StoreResultExtensions;
+use pyrin_hashes::Hash;
+use pyrin_math::uint::malachite_base::num::arithmetic::traits::CeilingLogBase2;
+use pyrin_utils::option::OptionExtensions;
 use parking_lot::RwLock;
 
 use crate::model::{
